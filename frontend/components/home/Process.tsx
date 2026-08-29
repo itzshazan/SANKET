@@ -428,7 +428,7 @@ export function Process({
           pinSpacing: false,
           scrub: 0.6,
           invalidateOnRefresh: true,
-          onUpdate: (self) => {
+          onUpdate: (self: { progress: number }) => {
             const p = clamp(self.progress);
             setProgress(p);
           },

@@ -16,7 +16,7 @@ interface SmoothScrollProps {
 }
 
 export function SmoothScroll({ children }: SmoothScrollProps) {
-  const lenisRef = useRef<Lenis | null>(null);
+  const lenisRef = useRef<any>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
     // 2. Initialize Lenis with production-grade performance options
     const lenis = new Lenis({
       duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
@@ -49,7 +49,7 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
 
     lenisRef.current = lenis;
     if (typeof window !== "undefined") {
-      (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+      (window as unknown as { __lenis?: any }).__lenis = lenis;
     }
 
     // 3. Connect Lenis scroll updates with GSAP ScrollTrigger
