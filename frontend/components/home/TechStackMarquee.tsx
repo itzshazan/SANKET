@@ -50,9 +50,6 @@ const ROW2_PLATFORM = [
 ];
 
 export function TechStackMarquee() {
-  const row1Extended = [...ROW1_AI_ML, ...ROW1_AI_ML];
-  const row2Extended = [...ROW2_PLATFORM, ...ROW2_PLATFORM];
-
   return (
     <section id="section-14" className="w-full bg-[#E0E5EC] py-20 md:py-28 overflow-hidden relative">
       {/* Side Fade Gradients */}
@@ -71,54 +68,110 @@ export function TechStackMarquee() {
         </p>
       </div>
 
-      {/* Row 1: AI / Geospatial Left Scroll */}
-      <div className="flex w-max animate-marquee-left gap-4 sm:gap-6 py-2 mb-4">
-        {row1Extended.map((item, idx) => {
-          const IconComponent = item.icon;
-          return (
-            <div
-              key={`${item.name}-${idx}`}
-              className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 shrink-0 select-none group"
-            >
-              <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
-                <IconComponent className="w-4 h-4" />
+      {/* Row 1: AI / Geospatial Left Scroll Track */}
+      <div className="marquee-container flex w-full overflow-hidden select-none mb-4">
+        {/* Track 1 */}
+        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6">
+          {ROW1_AI_ML.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={`row1-t1-${item.name}-${idx}`}
+                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 shrink-0 group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
+                  <IconComponent className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                    {item.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#6B7280]">
+                    {item.cat}
+                  </span>
+                </div>
               </div>
-              <div className="text-left">
-                <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
-                  {item.name}
-                </span>
-                <span className="text-[10px] font-mono text-[#6B7280]">
-                  {item.cat}
-                </span>
+            );
+          })}
+        </div>
+
+        {/* Track 2 (Seamless Duplicate) */}
+        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6" aria-hidden="true">
+          {ROW1_AI_ML.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={`row1-t2-${item.name}-${idx}`}
+                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 shrink-0 group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
+                  <IconComponent className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                    {item.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#6B7280]">
+                    {item.cat}
+                  </span>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
 
-      {/* Row 2: Platform / Cloud Right Scroll */}
-      <div className="flex w-max animate-marquee-right gap-4 sm:gap-6 py-2">
-        {row2Extended.map((item, idx) => {
-          const IconComponent = item.icon;
-          return (
-            <div
-              key={`${item.name}-${idx}`}
-              className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#38B2AC] transition-all duration-300 shrink-0 select-none group"
-            >
-              <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#38B2AC]">
-                <IconComponent className="w-4 h-4" />
+      {/* Row 2: Platform / Cloud Right Scroll Track */}
+      <div className="marquee-container flex w-full overflow-hidden select-none">
+        {/* Track 1 */}
+        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-right py-2 pr-4 sm:pr-6">
+          {ROW2_PLATFORM.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={`row2-t1-${item.name}-${idx}`}
+                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#38B2AC] transition-all duration-300 shrink-0 group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#38B2AC]">
+                  <IconComponent className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                    {item.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#6B7280]">
+                    {item.cat}
+                  </span>
+                </div>
               </div>
-              <div className="text-left">
-                <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
-                  {item.name}
-                </span>
-                <span className="text-[10px] font-mono text-[#6B7280]">
-                  {item.cat}
-                </span>
+            );
+          })}
+        </div>
+
+        {/* Track 2 (Seamless Duplicate) */}
+        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-right py-2 pr-4 sm:pr-6" aria-hidden="true">
+          {ROW2_PLATFORM.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={`row2-t2-${item.name}-${idx}`}
+                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#38B2AC] transition-all duration-300 shrink-0 group"
+              >
+                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#38B2AC]">
+                  <IconComponent className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                    {item.name}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#6B7280]">
+                    {item.cat}
+                  </span>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

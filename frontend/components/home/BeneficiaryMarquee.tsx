@@ -23,8 +23,6 @@ const INSTITUTIONS = [
 ];
 
 export function BeneficiaryMarquee() {
-  const items = [...INSTITUTIONS, ...INSTITUTIONS];
-
   return (
     <section id="section-03" className="w-full bg-[#E0E5EC] py-8 sm:py-10 overflow-hidden relative">
       {/* Left and Right Fade Gradients */}
@@ -37,23 +35,47 @@ export function BeneficiaryMarquee() {
         </span>
       </div>
 
-      <div className="flex w-max animate-marquee-left gap-4 sm:gap-6 py-2">
-        {items.map((item, idx) => {
-          const IconComponent = item.icon;
-          return (
-            <div
-              key={`${item.name}-${idx}`}
-              className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7),-8px_-8px_16px_rgba(255,255,255,0.8)] transition-all duration-300 shrink-0 select-none group"
-            >
-              <div className="w-7 h-7 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:text-[#38B2AC] transition-colors">
-                <IconComponent className="w-3.5 h-3.5" />
+      {/* Infinite Seamless Moving Track */}
+      <div className="marquee-container flex w-full overflow-hidden select-none">
+        {/* Track 1 */}
+        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6">
+          {INSTITUTIONS.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={`track1-${item.name}-${idx}`}
+                className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7),-8px_-8px_16px_rgba(255,255,255,0.8)] transition-all duration-300 shrink-0 group"
+              >
+                <div className="w-7 h-7 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:text-[#38B2AC] transition-colors">
+                  <IconComponent className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs sm:text-sm font-sans font-bold tracking-tight">
+                  {item.name}
+                </span>
               </div>
-              <span className="text-xs sm:text-sm font-sans font-bold tracking-tight">
-                {item.name}
-              </span>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
+        {/* Track 2 (Seamless Duplicate) */}
+        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6" aria-hidden="true">
+          {INSTITUTIONS.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={`track2-${item.name}-${idx}`}
+                className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7),-8px_-8px_16px_rgba(255,255,255,0.8)] transition-all duration-300 shrink-0 group"
+              >
+                <div className="w-7 h-7 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:text-[#38B2AC] transition-colors">
+                  <IconComponent className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-xs sm:text-sm font-sans font-bold tracking-tight">
+                  {item.name}
+                </span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
