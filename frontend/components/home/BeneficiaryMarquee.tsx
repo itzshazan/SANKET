@@ -5,7 +5,6 @@ import {
   Building2,
   Car,
   Flame,
-  Users,
   Landmark,
   Home,
   ShieldAlert,
@@ -24,14 +23,14 @@ const INSTITUTIONS = [
 
 export function BeneficiaryMarquee() {
   return (
-    <section id="section-03" className="w-full bg-[#E0E5EC] py-8 sm:py-10 overflow-hidden relative">
-      {/* Left and Right Fade Gradients */}
-      <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-[#E0E5EC] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 sm:w-36 bg-gradient-to-l from-[#E0E5EC] to-transparent z-10 pointer-events-none" />
+    <section id="section-03" className="w-full bg-[#0d0d0d] py-8 sm:py-10 overflow-hidden relative border-b border-[#262626]">
+      {/* Side Fade Gradients */}
+      <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 sm:w-36 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 mb-4 text-center">
-        <span className="text-[11px] font-mono uppercase tracking-widest text-[#6B7280] font-bold">
-          Operational Alignment Across Response Agencies
+        <span className="text-[11px] font-sans font-bold uppercase tracking-[1.5px] text-[#7e7e7e]">
+          Operational Integration Across Frontline Authorities
         </span>
       </div>
 
@@ -44,12 +43,12 @@ export function BeneficiaryMarquee() {
             return (
               <div
                 key={`track1-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7),-8px_-8px_16px_rgba(255,255,255,0.8)] transition-all duration-300 shrink-0 group"
+                className="flex items-center gap-3 px-5 py-2.5 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
               >
-                <div className="w-7 h-7 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:text-[#38B2AC] transition-colors">
+                <div className="w-7 h-7 bg-[#262626] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
                   <IconComponent className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs sm:text-sm font-sans font-bold tracking-tight">
+                <span className="text-xs sm:text-sm font-sans font-bold uppercase tracking-wider">
                   {item.name}
                 </span>
               </div>
@@ -64,12 +63,12 @@ export function BeneficiaryMarquee() {
             return (
               <div
                 key={`track2-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-6 py-3 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7),-8px_-8px_16px_rgba(255,255,255,0.8)] transition-all duration-300 shrink-0 group"
+                className="flex items-center gap-3 px-5 py-2.5 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
               >
-                <div className="w-7 h-7 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:text-[#38B2AC] transition-colors">
+                <div className="w-7 h-7 bg-[#262626] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
                   <IconComponent className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-xs sm:text-sm font-sans font-bold tracking-tight">
+                <span className="text-xs sm:text-sm font-sans font-bold uppercase tracking-wider">
                   {item.name}
                 </span>
               </div>

@@ -16,12 +16,12 @@ const STATS: StatItem[] = [
   },
   {
     value: "6+",
-    label: "Fused Ingestion Feeds",
+    label: "Fused Data Feeds",
     renderCount: (p) => `${Math.round(p * 6)}+`,
   },
   {
     value: "24/7",
-    label: "Continuous Telemetry",
+    label: "Telemetry Lookahead",
     renderCount: (p) => `${Math.round(p * 24)}/7`,
   },
   {
@@ -31,7 +31,7 @@ const STATS: StatItem[] = [
   },
   {
     value: "100%",
-    label: "Location-Specific Risk",
+    label: "Micro-Zone Precision",
     renderCount: (p) => `${Math.round(p * 100)}%`,
   },
 ];
@@ -84,20 +84,20 @@ function StatCounter({ stat }: { stat: StatItem }) {
 
 export function StatsBar() {
   return (
-    <section id="section-02" className="w-full bg-[#E0E5EC] py-12 sm:py-16">
+    <section id="section-02" className="w-full bg-black text-white py-16 sm:py-20 border-y border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 sm:gap-6">
-          {STATS.map((stat) => (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#262626]">
+          {STATS.map((stat, idx) => (
             <div
               key={stat.label}
-              className="p-6 rounded-[28px] bg-[#E0E5EC] shadow-[8px_8px_16px_rgba(163,177,198,0.6),-8px_-8px_16px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-[10px_10px_20px_rgba(163,177,198,0.7),-10px_-10px_20px_rgba(255,255,255,0.8)]"
+              className={`flex flex-col items-center justify-center text-center px-4 ${
+                idx > 0 && idx % 2 === 0 ? "pt-6 md:pt-0" : ""
+              }`}
             >
-              <div className="w-full py-3 mb-2 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)]">
-                <span className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#6C63FF] tracking-tight">
-                  <StatCounter stat={stat} />
-                </span>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 font-sans">
+                <StatCounter stat={stat} />
               </div>
-              <div className="text-xs sm:text-sm font-sans font-medium text-[#6B7280]">
+              <div className="text-xs font-bold font-sans uppercase tracking-[1.5px] text-[#7e7e7e]">
                 {stat.label}
               </div>
             </div>

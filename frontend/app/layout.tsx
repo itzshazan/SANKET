@@ -68,47 +68,30 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "GovernmentOrganization",
-  name: "SANKET",
-  url: siteUrl,
-  description:
-    "AI-powered landslide early warning and risk intelligence platform designed for disaster management authorities and communities.",
-  areaServed: "India",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "disaster response",
-    email: "Shazankhan324@gmail.com",
-    areaServed: "IN",
-    availableLanguage: ["English", "Hindi"],
-  },
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="antialiased" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className="min-h-full flex flex-col font-sans text-[#3D4852] bg-[#E0E5EC] selection:bg-[#6C63FF] selection:text-white" suppressHydrationWarning>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
         />
-        <ScrollProgressBar />
+      </head>
+      <body className="min-h-screen bg-black text-[#bbbbbb] antialiased selection:bg-[#e22718] selection:text-white flex flex-col font-sans">
         <SmoothScroll>
+          <ScrollProgressBar />
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
           <MonitoringPill />
-          <AnalyticsConsent />
           <WhatsAppButton />
+          <AnalyticsConsent />
         </SmoothScroll>
       </body>
     </html>

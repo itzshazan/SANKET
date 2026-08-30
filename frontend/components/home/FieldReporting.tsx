@@ -6,10 +6,8 @@ import {
   MapPin,
   Send,
   Brain,
-  CheckCircle2,
   Smartphone,
   ShieldCheck,
-  UploadCloud,
   Wifi
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -56,25 +54,24 @@ const STEPS = [
 export function FieldReporting() {
   const [activeStep, setActiveStep] = useState(0);
   const current = STEPS[activeStep];
-  const Icon = current.icon;
 
   return (
-    <section id="section-11" className="w-full bg-[#E0E5EC] py-20 md:py-28">
+    <section id="section-11" className="w-full bg-black py-20 md:py-28 border-t border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
-            Field Ground-Truth Reporting
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+            <span>Field Ground-Truth Reporting</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
             How Field Observations Reach SANKET
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+          <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
             Empowering patrol teams with instant, offline-capable geological hazard reporting.
           </p>
         </div>
 
-        {/* Tactile 4-Step Stepper */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
+        {/* 4-Step Stepper */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
           {STEPS.map((step, idx) => {
             const isActive = idx === activeStep;
             const StepIcon = step.icon;
@@ -82,21 +79,21 @@ export function FieldReporting() {
               <button
                 key={step.step}
                 onClick={() => setActiveStep(idx)}
-                className={`p-4 rounded-2xl text-left transition-all duration-300 cursor-pointer ${
+                className={`p-4 text-left transition-all duration-150 cursor-pointer border ${
                   isActive
-                    ? "bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] border-l-4 border-[#6C63FF]"
-                    : "bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7)]"
+                    ? "bg-[#262626] text-white border-white"
+                    : "bg-[#0d0d0d] text-[#bbbbbb] border-[#262626] hover:bg-[#1a1a1a]"
                 }`}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-7 h-7 rounded-xl bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] flex items-center justify-center text-[#6C63FF]">
+                  <div className={`w-7 h-7 flex items-center justify-center ${isActive ? "bg-white text-black" : "bg-[#1a1a1a] text-white"}`}>
                     <StepIcon className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-[#6C63FF]">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-white">
                     Step 0{step.step}
                   </span>
                 </div>
-                <span className="text-xs font-bold text-[#3D4852] block truncate">
+                <span className="text-xs font-bold uppercase block truncate text-white">
                   {step.title}
                 </span>
               </button>
@@ -104,59 +101,59 @@ export function FieldReporting() {
           })}
         </div>
 
-        {/* Molded Display Container */}
-        <div className="rounded-[32px] bg-[#E0E5EC] shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.8)] p-8 sm:p-12">
+        {/* Display Container */}
+        <div className="bg-[#1a1a1a] border border-[#3c3c3c] p-8 sm:p-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.step}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
             >
               {/* Left Column (Span 7) */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF]">
+                <span className="inline-block px-3 py-1 bg-[#0d0d0d] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white">
                   {current.badge}
-                </div>
+                </span>
 
-                <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#3D4852]">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-sans uppercase">
                   {current.title}
                 </h3>
 
-                <p className="text-base text-[#6B7280] leading-relaxed">
+                <p className="text-base text-[#bbbbbb] font-light leading-relaxed">
                   {current.desc}
                 </p>
 
-                <div className="p-4 rounded-2xl bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] flex items-center gap-3 text-xs font-mono text-[#3D4852]">
-                  <ShieldCheck className="w-5 h-5 text-[#38B2AC] shrink-0" />
+                <div className="p-4 bg-[#0d0d0d] border border-[#262626] flex items-center gap-3 text-xs font-mono text-white">
+                  <ShieldCheck className="w-5 h-5 text-white shrink-0" />
                   <span>Encrypted Offline Cache with Automatic Mesh Reconnect</span>
                 </div>
               </div>
 
-              {/* Right Column: Inset Mobile Simulation (Span 5) */}
+              {/* Right Column: Mobile Simulation (Span 5) */}
               <div className="lg:col-span-5 flex justify-center">
-                <div className="w-full max-w-sm p-6 rounded-[28px] bg-[#E0E5EC] shadow-[inset_8px_8px_16px_rgba(163,177,198,0.7),inset_-8px_-8px_16px_rgba(255,255,255,0.6)] space-y-4">
-                  <div className="flex items-center justify-between text-xs font-mono text-[#6B7280]">
-                    <div className="flex items-center gap-2">
-                      <Smartphone className="w-4 h-4 text-[#6C63FF]" />
-                      <span>SANKET Field App</span>
+                <div className="w-full max-w-sm p-6 bg-[#0d0d0d] text-white border border-[#262626] space-y-4">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#7e7e7e]">
+                    <div className="flex items-center gap-2 text-white">
+                      <Smartphone className="w-4 h-4" />
+                      <span className="uppercase tracking-wider font-bold">SANKET Field App</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[#38B2AC]">
+                    <div className="flex items-center gap-1.5 text-white font-bold">
                       <Wifi className="w-3.5 h-3.5" />
                       <span>SYNCED</span>
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-[#E0E5EC] shadow-[4px_4px_8px_rgba(163,177,198,0.5),-4px_-4px_8px_rgba(255,255,255,0.6)] space-y-2">
-                    <div className="text-[11px] font-mono text-[#6B7280]">
+                  <div className="p-4 bg-[#1a1a1a] border border-[#262626] space-y-2">
+                    <div className="text-[11px] font-mono text-[#7e7e7e] uppercase tracking-wider">
                       Telemetry Stream
                     </div>
-                    <div className="text-xs font-mono font-bold text-[#3D4852]">
+                    <div className="text-xs font-mono font-bold text-white">
                       {current.mockupDetail}
                     </div>
-                    <div className="text-xs font-mono text-[#6C63FF] font-bold">
+                    <div className="text-xs font-mono text-[#1c69d4] font-bold uppercase">
                       {current.mockupStatus}
                     </div>
                   </div>

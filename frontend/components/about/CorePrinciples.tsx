@@ -28,16 +28,16 @@ export function CorePrinciples() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#E0E5EC] text-[#3D4852]">
+    <section className="py-20 sm:py-28 bg-[#0d0d0d] text-white border-t border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF]">
-            Architectural Pillars
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white">
+            <span>Architectural Pillars</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-[#3D4852]">
-            Engineering Rigor for Life-Critical Early Warning
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
+            Engineering Rigor For Life-Critical Early Warning
           </h2>
-          <p className="text-base sm:text-lg text-[#6B7280] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
             Geohazard prediction requires deterministic physics modeling, high-reliability infrastructure, and seamless multi-agency interoperability.
           </p>
         </div>
@@ -48,16 +48,16 @@ export function CorePrinciples() {
             return (
               <div
                 key={idx}
-                className="p-8 rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] hover:shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.7)] hover:translate-y-[-2px] transition-all duration-300 flex flex-col justify-between"
+                className="p-8 bg-[#1a1a1a] border border-[#3c3c3c] hover:border-white hover:-translate-y-1 transition-all duration-150 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] mb-5">
-                    <IconComponent className="w-6 h-6" />
+                  <div className="w-10 h-10 bg-[#0d0d0d] border border-[#3c3c3c] flex items-center justify-center text-white mb-5">
+                    <IconComponent className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-display font-extrabold text-[#3D4852] mb-3">
+                  <h3 className="text-base font-bold uppercase tracking-wider text-white mb-2.5 font-sans">
                     {p.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#bbbbbb] font-light leading-relaxed">
                     {p.description}
                   </p>
                 </div>

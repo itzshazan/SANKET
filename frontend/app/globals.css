@@ -1,177 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-neu-base: #E0E5EC;
-  --color-neu-foreground: #3D4852;
-  --color-neu-muted: #6B7280;
-  
-  --color-accent-primary: #6C63FF;
-  --color-accent-light: #8B84FF;
-  --color-accent-teal: #38B2AC;
-
-  --color-risk-normal: #38B2AC;
-  --color-risk-watch: #D69E2E;
-  --color-risk-warning: #DD6B20;
-  --color-risk-danger: #E53E3E;
-
-  --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-
 :root {
-  --neu-base: #E0E5EC;
-  --neu-text: #3D4852;
-  --neu-muted: #6B7280;
-  --neu-accent: #6C63FF;
-  --neu-accent-light: #8B84FF;
-  --neu-teal: #38B2AC;
+  /* BMW M Color Tokens */
+  --canvas: #000000;
+  --surface-soft: #0d0d0d;
+  --surface-card: #1a1a1a;
+  --surface-elevated: #262626;
+  --carbon-gray: #2b2b2b;
+  
+  --hairline: #3c3c3c;
+  --hairline-strong: #262626;
 
-  /* Shadow Tokens */
-  --shadow-extruded: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  --shadow-extruded-hover: 12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.6);
-  --shadow-extruded-sm: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
-  --shadow-inset: inset 6px 6px 10px rgba(163, 177, 198, 0.6), inset -6px -6px 10px rgba(255, 255, 255, 0.5);
-  --shadow-inset-deep: inset 10px 10px 20px rgba(163, 177, 198, 0.7), inset -10px -10px 20px rgba(255, 255, 255, 0.6);
-  --shadow-inset-sm: inset 3px 3px 6px rgba(163, 177, 198, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+  --primary: #ffffff;
+  --ink: #ffffff;
+  --body-strong: #e6e6e6;
+  --body: #bbbbbb;
+  --muted: #7e7e7e;
+  --on-dark: #ffffff;
+
+  /* BMW M Tricolor Signature */
+  --m-blue-light: #0066b1;
+  --m-blue-dark: #1c69d4;
+  --m-red: #e22718;
+  --bmw-blue: #1c69d4;
+  --electric-blue: #0653b6;
 }
 
-/* Base Body Styles */
 body {
-  background-color: #E0E5EC;
-  color: #3D4852;
-  font-family: var(--font-sans);
+  background-color: var(--canvas);
+  color: var(--body);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Neumorphic Utility Classes ─── */
-
-.neu-base {
-  background-color: #E0E5EC;
+/* ─── Typography Utility Classes ─── */
+.font-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
-.neu-extruded {
-  background-color: #E0E5EC;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+.font-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
 }
 
-.neu-extruded-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.neu-extruded-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.6);
+.font-mono {
+  font-family: 'Source Code Pro', monospace;
 }
 
-.neu-extruded-sm {
-  background-color: #E0E5EC;
-  box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
+/* ─── BMW M Tricolor Stripe ─── */
+.m-stripe {
+  display: flex;
+  height: 4px;
+  width: 100%;
 }
 
-.neu-inset {
-  background-color: #E0E5EC;
-  box-shadow: inset 6px 6px 10px rgba(163, 177, 198, 0.6), inset -6px -6px 10px rgba(255, 255, 255, 0.5);
+.m-stripe-segment-1 {
+  background-color: #0066b1;
+  flex: 1;
 }
 
-.neu-inset-deep {
-  background-color: #E0E5EC;
-  box-shadow: inset 10px 10px 20px rgba(163, 177, 198, 0.7), inset -10px -10px 20px rgba(255, 255, 255, 0.6);
+.m-stripe-segment-2 {
+  background-color: #1c69d4;
+  flex: 1;
 }
 
-.neu-inset-sm {
-  background-color: #E0E5EC;
-  box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+.m-stripe-segment-3 {
+  background-color: #e22718;
+  flex: 1;
 }
 
-/* Molded Card */
-.neu-card {
-  background-color: #E0E5EC;
-  border-radius: 32px;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  border: none;
-  transition: all 0.3s ease-out;
-}
-.neu-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.6);
+.m-stripe-bg {
+  background: linear-gradient(to right, #0066b1 33.33%, #1c69d4 33.33% 66.66%, #e22718 66.66%);
 }
 
-/* Molded Primary Button */
-.neu-btn-primary {
-  background-color: #6C63FF;
-  color: #FFFFFF;
-  border-radius: 16px;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  border: none;
-  transition: all 0.3s ease-out;
+.m-stripe-badge {
+  position: relative;
+  overflow: hidden;
 }
-.neu-btn-primary:hover {
-  background-color: #7B73FF;
+
+.m-stripe-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #0066b1 33.33%, #1c69d4 33.33% 66.66%, #e22718 66.66%);
+}
+
+/* ─── BMW M Engineered Precision Buttons ─── */
+.btn-bmw-primary {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 0px;
+  padding: 14px 28px;
+  display: inline-flex;
+  items-center: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #ffffff;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-bmw-primary:hover {
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
   transform: translateY(-1px);
-  box-shadow: 12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.6);
-}
-.neu-btn-primary:active {
-  transform: translateY(0.5px);
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.35), inset -4px -4px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Molded Secondary / Clay Button */
-.neu-btn-secondary {
-  background-color: #E0E5EC;
-  color: #3D4852;
-  border-radius: 16px;
-  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-  border: none;
-  transition: all 0.3s ease-out;
+.btn-bmw-primary:active {
+  background-color: #cccccc;
+  transform: translateY(0);
 }
-.neu-btn-secondary:hover {
-  color: #6C63FF;
+
+.btn-bmw-outline {
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 0px;
+  padding: 14px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: inline-flex;
+  items-center: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-bmw-outline:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
   transform: translateY(-1px);
-  box-shadow: 12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.6);
-}
-.neu-btn-secondary:active {
-  transform: translateY(0.5px);
-  box-shadow: inset 4px 4px 8px rgba(163, 177, 198, 0.7), inset -4px -4px 8px rgba(255, 255, 255, 0.6);
 }
 
-/* Sunken Input Field */
-.neu-input {
-  background-color: #E0E5EC;
-  color: #3D4852;
-  border-radius: 16px;
-  box-shadow: inset 6px 6px 10px rgba(163, 177, 198, 0.6), inset -6px -6px 10px rgba(255, 255, 255, 0.5);
-  border: none;
-  outline: none;
-  transition: all 0.25s ease-out;
-}
-.neu-input:focus {
-  box-shadow: inset 10px 10px 20px rgba(163, 177, 198, 0.7), inset -10px -10px 20px rgba(255, 255, 255, 0.6);
-  ring: 2px solid #6C63FF;
+/* ─── BMW M Spec Cards & Surfaces ─── */
+.card-bmw-spec {
+  background-color: #1a1a1a;
+  border: 1px solid #3c3c3c;
+  border-radius: 0px;
+  color: #ffffff;
 }
 
-/* Sunken Icon Well */
-.neu-well {
-  background-color: #E0E5EC;
-  border-radius: 16px;
-  box-shadow: inset 6px 6px 10px rgba(163, 177, 198, 0.6), inset -6px -6px 10px rgba(255, 255, 255, 0.5);
+.card-bmw-soft {
+  background-color: #0d0d0d;
+  border: 1px solid #262626;
+  border-radius: 0px;
 }
 
-.neu-well-deep {
-  background-color: #E0E5EC;
-  border-radius: 20px;
-  box-shadow: inset 10px 10px 20px rgba(163, 177, 198, 0.7), inset -10px -10px 20px rgba(255, 255, 255, 0.6);
-}
-
-/* Tactile Badge */
-.neu-badge {
-  background-color: #E0E5EC;
-  border-radius: 9999px;
-  box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.6), inset -3px -3px 6px rgba(255, 255, 255, 0.5);
-}
-
-/* ─── Seamless Infinite Marquee Animations ─── */
+/* ─── Seamless Infinite Marquee ─── */
 @keyframes marquee-left {
   0% {
     transform: translateX(0%);
@@ -192,12 +181,12 @@ body {
 
 .animate-marquee-left {
   display: flex;
-  animation: marquee-left 35s linear infinite;
+  animation: marquee-left 32s linear infinite;
 }
 
 .animate-marquee-right {
   display: flex;
-  animation: marquee-right 35s linear infinite;
+  animation: marquee-right 32s linear infinite;
 }
 
 .marquee-container:hover .animate-marquee-left,
@@ -205,22 +194,8 @@ body {
   animation-play-state: paused;
 }
 
-/* ─── Ambient Float Animation ─── */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.animate-float {
-  animation: float 3.5s ease-in-out infinite;
-}
-
-/* Focus styles for keyboard accessibility */
+/* ─── Focus Styles for Accessibility ─── */
 :focus-visible {
-  outline: 2px solid #6C63FF;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }

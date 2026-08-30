@@ -1,28 +1,10 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Neumorphic Drop Shadow Filter -->
-    <filter id="neuShadow" x="-10%" y="-10%" width="130%" height="130%" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="#A3B1C6" flood-opacity="0.8"/>
-      <feDropShadow dx="-3" dy="-3" stdDeviation="3" flood-color="#FFFFFF" flood-opacity="0.9"/>
-    </filter>
-
-    <!-- Core Pill Gradient & Shadow -->
-    <linearGradient id="coreViolet" x1="16" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7B73FF"/>
-      <stop offset="1" stop-color="#5B52EE"/>
-    </linearGradient>
-
-    <filter id="coreGlow" x="8" y="8" width="48" height="48" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#5B52EE" flood-opacity="0.4"/>
-    </filter>
-  </defs>
-
-  <!-- Outer Soft-Clay Neumorphic Base -->
-  <rect x="6" y="6" width="52" height="52" rx="16" fill="#E0E5EC" filter="url(#neuShadow)"/>
-
-  <!-- Inner Soft Violet Emblem Pod -->
-  <rect x="15" y="15" width="34" height="34" rx="11" fill="url(#coreViolet)" filter="url(#coreGlow)"/>
-
-  <!-- Solid Bold S Mark for high contrast at 16px/32px/64px -->
-  <text x="32" y="40" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="25" text-anchor="middle" letter-spacing="-0.5">S</text>
+  <rect width="64" height="64" fill="#000000"/>
+  <rect x="8" y="8" width="48" height="48" fill="#1A1A1A" stroke="#3C3C3C" stroke-width="1.5"/>
+  <g transform="skewX(-15) translate(10, 0)">
+    <rect x="14" y="16" width="6" height="32" fill="#0066B1"/>
+    <rect x="20" y="16" width="6" height="32" fill="#1C69D4"/>
+    <rect x="26" y="16" width="6" height="32" fill="#E22718"/>
+  </g>
+  <text x="44" y="42" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="24" text-anchor="middle" font-weight="900">S</text>
 </svg>

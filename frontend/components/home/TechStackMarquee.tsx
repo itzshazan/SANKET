@@ -5,14 +5,12 @@ import {
   Code2,
   Terminal,
   Cpu,
-  Layers,
   Database,
   Globe,
   Server,
   Cloud,
   Eye,
   Satellite,
-  GitBranch,
   Box
 } from "lucide-react";
 
@@ -51,42 +49,41 @@ const ROW2_PLATFORM = [
 
 export function TechStackMarquee() {
   return (
-    <section id="section-14" className="w-full bg-[#E0E5EC] py-20 md:py-28 overflow-hidden relative">
+    <section id="section-14" className="w-full bg-[#0d0d0d] py-20 md:py-28 overflow-hidden relative border-b border-[#262626]">
       {/* Side Fade Gradients */}
-      <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-[#E0E5EC] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 sm:w-36 bg-gradient-to-l from-[#E0E5EC] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 sm:w-36 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
-          Open Architecture
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+          <span>Open Architecture</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
           Modern Geospatial & Machine Learning Stack
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+        <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
           Built with battle-tested open-source scientific computing and scalable cloud infrastructure.
         </p>
       </div>
 
-      {/* Row 1: AI / Geospatial Left Scroll Track */}
+      {/* Row 1: Left Scroll Track */}
       <div className="marquee-container flex w-full overflow-hidden select-none mb-4">
-        {/* Track 1 */}
         <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6">
           {ROW1_AI_ML.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={`row1-t1-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 shrink-0 group"
+                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
-                  <IconComponent className="w-4 h-4" />
+                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                  <IconComponent className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-left">
-                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#6B7280]">
+                  <span className="text-[10px] font-mono text-[#7e7e7e]">
                     {item.cat}
                   </span>
                 </div>
@@ -95,23 +92,22 @@ export function TechStackMarquee() {
           })}
         </div>
 
-        {/* Track 2 (Seamless Duplicate) */}
         <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6" aria-hidden="true">
           {ROW1_AI_ML.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={`row1-t2-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 shrink-0 group"
+                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
-                  <IconComponent className="w-4 h-4" />
+                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                  <IconComponent className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-left">
-                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#6B7280]">
+                  <span className="text-[10px] font-mono text-[#7e7e7e]">
                     {item.cat}
                   </span>
                 </div>
@@ -121,25 +117,24 @@ export function TechStackMarquee() {
         </div>
       </div>
 
-      {/* Row 2: Platform / Cloud Right Scroll Track */}
+      {/* Row 2: Right Scroll Track */}
       <div className="marquee-container flex w-full overflow-hidden select-none">
-        {/* Track 1 */}
         <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-right py-2 pr-4 sm:pr-6">
           {ROW2_PLATFORM.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={`row2-t1-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#38B2AC] transition-all duration-300 shrink-0 group"
+                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#38B2AC]">
-                  <IconComponent className="w-4 h-4" />
+                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                  <IconComponent className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-left">
-                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#6B7280]">
+                  <span className="text-[10px] font-mono text-[#7e7e7e]">
                     {item.cat}
                   </span>
                 </div>
@@ -148,23 +143,22 @@ export function TechStackMarquee() {
           })}
         </div>
 
-        {/* Track 2 (Seamless Duplicate) */}
         <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-right py-2 pr-4 sm:pr-6" aria-hidden="true">
           {ROW2_PLATFORM.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={`row2-t2-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-[#3D4852] hover:text-[#38B2AC] transition-all duration-300 shrink-0 group"
+                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#38B2AC]">
-                  <IconComponent className="w-4 h-4" />
+                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                  <IconComponent className="w-3.5 h-3.5" />
                 </div>
                 <div className="text-left">
-                  <span className="text-xs sm:text-sm font-sans font-bold tracking-tight block text-[#3D4852]">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#6B7280]">
+                  <span className="text-[10px] font-mono text-[#7e7e7e]">
                     {item.cat}
                   </span>
                 </div>

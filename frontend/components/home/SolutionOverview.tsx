@@ -6,10 +6,7 @@ import {
   Layers,
   Brain,
   Bell,
-  CheckCircle,
-  Activity,
-  ArrowRight,
-  Radio
+  CheckCircle2,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -107,25 +104,24 @@ const PHASES: PhaseItem[] = [
 export function SolutionOverview() {
   const [activeTab, setActiveTab] = useState(0);
   const current = PHASES[activeTab];
-  const Icon = current.icon;
 
   return (
-    <section id="section-07" className="w-full bg-[#E0E5EC] py-20 md:py-28">
+    <section id="section-07" className="w-full bg-black py-20 md:py-28 border-t border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
-            End-to-End Pipeline
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+            <span>End-to-End Pipeline</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
             How SANKET Predicts Slope Failure
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+          <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
             From raw satellite radar feeds to instant emergency response alerts in 4 continuous stages.
           </p>
         </div>
 
-        {/* Tactile Tab Selector Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 max-w-4xl mx-auto">
+        {/* Tab Selector Buttons (BMW M Sharp Uppercase Tabs) */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10 max-w-3xl mx-auto">
           {PHASES.map((phase, idx) => {
             const isActive = idx === activeTab;
             const PhaseIcon = phase.icon;
@@ -133,13 +129,13 @@ export function SolutionOverview() {
               <button
                 key={phase.name}
                 onClick={() => setActiveTab(idx)}
-                className={`p-4 rounded-2xl flex items-center justify-center gap-2.5 font-display font-bold text-sm transition-all duration-300 cursor-pointer ${
+                className={`px-6 py-3 flex items-center justify-center gap-2 text-xs font-bold font-sans uppercase tracking-[1.5px] transition-all duration-150 cursor-pointer border ${
                   isActive
-                    ? "bg-[#E0E5EC] text-[#6C63FF] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)]"
-                    : "bg-[#E0E5EC] text-[#3D4852] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:text-[#6C63FF] hover:shadow-[8px_8px_16px_rgba(163,177,198,0.7)]"
+                    ? "bg-white text-black border-white"
+                    : "bg-[#1a1a1a] text-[#bbbbbb] border-[#3c3c3c] hover:bg-[#262626] hover:text-white"
                 }`}
               >
-                <PhaseIcon className="w-4 h-4" />
+                <PhaseIcon className="w-3.5 h-3.5" />
                 <span>{phase.name}</span>
               </button>
             );
@@ -147,62 +143,60 @@ export function SolutionOverview() {
         </div>
 
         {/* Main Display Card */}
-        <div className="rounded-[32px] bg-[#E0E5EC] shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.8)] p-6 sm:p-12">
+        <div className="bg-[#1a1a1a] border border-[#3c3c3c] p-8 sm:p-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.25 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
             >
-              {/* Left Column: Details (Span 7) */}
+              {/* Left Column (Span 7) */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF]">
+                <span className="inline-block px-3 py-1 bg-[#0d0d0d] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white">
                   {current.badge}
-                </div>
+                </span>
 
-                <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-[#3D4852] leading-tight">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight font-sans uppercase">
                   {current.headline}
                 </h3>
 
                 <ul className="space-y-3 pt-2">
                   {current.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-[#6B7280]">
-                      <div className="w-5 h-5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#38B2AC] shrink-0 mt-0.5">
-                        <CheckCircle className="w-3.5 h-3.5" />
-                      </div>
+                    <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-[#bbbbbb] font-light">
+                      <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Right Column: Inset Telemetry Screen (Span 5) */}
+              {/* Right Column: Technical Spec Box (Span 5) */}
               <div className="lg:col-span-5">
-                <div className="p-6 rounded-[28px] bg-[#E0E5EC] shadow-[inset_8px_8px_16px_rgba(163,177,198,0.7),inset_-8px_-8px_16px_rgba(255,255,255,0.6)] space-y-4">
+                <div className="p-6 bg-[#0d0d0d] border border-[#262626] space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-[#6C63FF] uppercase tracking-wider">
+                    <span className="text-xs font-mono font-bold text-white uppercase tracking-[1.5px]">
                       {current.visualTitle}
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-[#38B2AC] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#1c69d4] animate-pulse" />
                   </div>
 
-                  <p className="text-xs text-[#6B7280]">
+                  <p className="text-xs text-[#7e7e7e] font-light">
                     {current.visualSummary}
                   </p>
 
-                  <div className="space-y-2.5 pt-2">
+                  <div className="space-y-2 pt-2">
                     {current.visualData.map((item, idx) => (
                       <div
                         key={idx}
-                        className="p-3 rounded-2xl bg-[#E0E5EC] shadow-[4px_4px_8px_rgba(163,177,198,0.5),-4px_-4px_8px_rgba(255,255,255,0.6)] flex items-center justify-between text-xs"
+                        className="p-3 bg-[#1a1a1a] border border-[#262626] flex items-center justify-between text-xs"
                       >
-                        <span className="text-[#3D4852] font-medium">{item.label}</span>
+                        <span className="text-[#bbbbbb] uppercase tracking-wider">{item.label}</span>
                         <div className="flex items-center gap-2 font-mono">
-                          <span className="font-bold text-[#3D4852]">{item.value}</span>
-                          <span className="text-[10px] px-2 py-0.5 rounded-md bg-[#6C63FF]/15 text-[#6C63FF] font-bold">
+                          <span className="font-bold text-white">{item.value}</span>
+                          <span className="text-[10px] px-2 py-0.5 bg-white text-black font-bold uppercase">
                             {item.status}
                           </span>
                         </div>

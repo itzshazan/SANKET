@@ -1,41 +1,41 @@
 import React from "react";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary-violet" | "secondary-neu" | "ghost-neu" | "primary-lime" | "primary-forest" | "ghost-light" | "ghost-dark" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "primary-lime" | "primary-forest" | "ghost-light" | "ghost-dark";
   size?: "sm" | "md" | "lg";
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = "", variant = "primary-violet", size = "md", ...props }, ref) => {
+  ({ className = "", variant = "primary", size = "md", ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-display font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6C63FF] disabled:opacity-50 disabled:pointer-events-none rounded-2xl cursor-pointer";
+      "inline-flex items-center justify-center font-sans font-bold uppercase tracking-[1.5px] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-none cursor-pointer";
 
     const variants: Record<string, string> = {
-      "primary-violet":
-        "bg-[#6C63FF] text-white shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:bg-[#7B73FF] hover:translate-y-[-1px] active:translate-y-[0.5px] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.35)]",
-      "secondary-neu":
-        "bg-[#E0E5EC] text-[#3D4852] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:text-[#6C63FF] hover:translate-y-[-1px] active:translate-y-[0.5px] active:shadow-[inset_4px_4px_8px_rgba(163,177,198,0.7),inset_-4px_-4px_8px_rgba(255,255,255,0.6)]",
-      "ghost-neu":
-        "bg-[#E0E5EC] text-[#6B7280] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.5),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] hover:text-[#3D4852]",
+      primary:
+        "bg-white text-black hover:bg-[#e6e6e6] active:scale-[0.98]",
+      secondary:
+        "bg-[#1a1a1a] text-white border border-[#3c3c3c] hover:border-white",
+      outline:
+        "bg-transparent text-white border border-white hover:bg-white/10",
+      ghost:
+        "bg-transparent text-[#bbbbbb] hover:text-white hover:bg-white/5",
       "primary-lime":
-        "bg-[#6C63FF] text-white shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:bg-[#7B73FF]",
+        "bg-white text-black hover:bg-[#e6e6e6]",
       "primary-forest":
-        "bg-[#E0E5EC] text-[#3D4852] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:text-[#6C63FF]",
+        "bg-[#1c69d4] text-white hover:bg-[#0066b1]",
       "ghost-light":
-        "bg-[#E0E5EC] text-[#3D4852] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.5),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]",
+        "bg-transparent text-[#bbbbbb] hover:text-white hover:bg-white/5",
       "ghost-dark":
-        "bg-[#E0E5EC] text-[#3D4852] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.5),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]",
-      "outline":
-        "bg-[#E0E5EC] text-[#3D4852] shadow-[5px_5px_10px_rgba(163,177,198,0.6),-5px_-5px_10px_rgba(255,255,255,0.5)]",
+        "bg-transparent text-white border border-[#3c3c3c] hover:bg-white/10",
     };
 
     const sizes = {
-      sm: "h-9 px-4 text-xs tracking-tight rounded-xl",
-      md: "h-11 px-6 py-2.5 text-sm tracking-tight rounded-2xl",
-      lg: "h-13 px-8 text-base tracking-tight rounded-2xl",
+      sm: "h-9 px-4 text-xs tracking-wider",
+      md: "h-11 px-6 py-2.5 text-xs tracking-[1.5px]",
+      lg: "h-13 px-8 text-sm tracking-[1.5px]",
     };
 
-    const classes = `${baseStyles} ${variants[variant] || variants["primary-violet"]} ${sizes[size]} ${className}`;
+    const classes = `${baseStyles} ${variants[variant] || variants.primary} ${sizes[size]} ${className}`;
 
     return <button ref={ref} className={classes} {...props} />;
   }

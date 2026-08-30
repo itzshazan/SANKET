@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const faqs = [
@@ -41,23 +41,23 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="pt-28 sm:pt-36 min-h-screen bg-[#E0E5EC] text-[#3D4852] pb-24">
+    <div className="pt-32 sm:pt-40 min-h-screen bg-black text-white pb-24 selection:bg-[#e22718] selection:text-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
-            Platform Intelligence FAQs
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+            <span>Platform FAQs</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white font-sans uppercase">
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+          <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
             Everything you need to know about SANKET&apos;s physics-based landslide prediction algorithms, sensor pipelines, and alert dissemination networks.
           </p>
         </div>
 
         {/* Feature Tags */}
-        <div className="max-w-3xl mx-auto mb-12 grid gap-3 sm:grid-cols-3">
+        <div className="max-w-2xl mx-auto mb-12 grid gap-3 sm:grid-cols-3">
           {[
             "AI predictive pore modeling",
             "Sentinel-2 & sensor fusion",
@@ -65,52 +65,46 @@ export default function FAQPage() {
           ].map((item) => (
             <div
               key={item}
-              className="rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] p-3 text-xs font-mono font-bold text-[#3D4852] text-center"
+              className="bg-[#1a1a1a] border border-[#3c3c3c] p-3 text-xs font-mono font-bold uppercase tracking-wider text-white text-center"
             >
               {item}
             </div>
           ))}
         </div>
 
-        {/* Tactile Neumorphic Accordion List */}
-        <div className="space-y-4 sm:space-y-5">
+        {/* Accordion List */}
+        <div className="space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndexes.includes(index);
             return (
               <div
                 key={index}
-                className={`rounded-[28px] bg-[#E0E5EC] transition-all duration-300 overflow-hidden ${
-                  isOpen
-                    ? "shadow-[inset_6px_6px_12px_rgba(163,177,198,0.7),inset_-6px_-6px_12px_rgba(255,255,255,0.6)]"
-                    : "shadow-[8px_8px_16px_rgba(163,177,198,0.6),-8px_-8px_16px_rgba(255,255,255,0.6)] hover:shadow-[10px_10px_20px_rgba(163,177,198,0.7),-10px_-10px_20px_rgba(255,255,255,0.7)]"
-                }`}
+                className="bg-[#1a1a1a] border border-[#3c3c3c] transition-all overflow-hidden"
               >
                 <button
                   type="button"
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer select-none group"
+                  className="w-full text-left p-6 flex items-center justify-between gap-4 cursor-pointer select-none group"
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className={`w-9 h-9 rounded-xl flex items-center justify-center text-xs font-mono font-bold transition-all duration-300 shrink-0 ${
+                      className={`w-8 h-8 flex items-center justify-center text-xs font-mono font-bold transition-all shrink-0 ${
                         isOpen
-                          ? "bg-[#6C63FF] text-white shadow-[2px_2px_6px_rgba(108,99,255,0.4)]"
-                          : "bg-[#E0E5EC] text-[#3D4852] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]"
+                          ? "bg-white text-black"
+                          : "bg-[#0d0d0d] text-white border border-[#262626]"
                       }`}
                     >
                       Q{index + 1}
                     </div>
-                    <span className="text-base sm:text-lg font-display font-extrabold text-[#3D4852] group-hover:text-[#6C63FF] transition-colors leading-snug">
+                    <span className="text-base sm:text-lg font-bold uppercase tracking-wide text-white group-hover:text-[#1c69d4] transition-colors leading-snug font-sans">
                       {faq.question}
                     </span>
                   </div>
 
                   <div
-                    className={`w-9 h-9 rounded-xl bg-[#E0E5EC] flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen
-                        ? "shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] rotate-180 text-[#6C63FF]"
-                        : "shadow-[3px_3px_6px_rgba(163,177,198,0.6),-3px_-3px_6px_rgba(255,255,255,0.6)] text-[#6B7280]"
+                    className={`w-8 h-8 bg-[#0d0d0d] border border-[#262626] flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen ? "rotate-180 text-white" : "text-[#7e7e7e]"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -118,14 +112,9 @@ export default function FAQPage() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 sm:px-7 sm:pb-7 animate-in fade-in duration-200">
-                    <div className="p-4 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.5),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-lg bg-[#38B2AC] text-white text-xs font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">
-                        A
-                      </span>
-                      <p className="text-sm sm:text-base text-[#3D4852] leading-relaxed">
-                        {faq.answer}
-                      </p>
+                  <div className="px-6 pb-6 pt-1 sm:px-7 sm:pb-7 animate-in fade-in duration-150">
+                    <div className="p-5 bg-[#0d0d0d] border border-[#262626] text-sm text-[#bbbbbb] font-light leading-relaxed">
+                      {faq.answer}
                     </div>
                   </div>
                 )}
@@ -135,17 +124,17 @@ export default function FAQPage() {
         </div>
 
         {/* Bottom CTA Pod */}
-        <div className="mt-16 text-center p-8 rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] space-y-4">
-          <h3 className="text-xl font-display font-extrabold text-[#3D4852]">
+        <div className="mt-16 text-center p-8 sm:p-10 bg-[#1a1a1a] border border-[#3c3c3c] space-y-4">
+          <h3 className="text-xl sm:text-2xl font-extrabold uppercase text-white font-sans">
             Have a custom agency deployment or sensor integration question?
           </h3>
-          <p className="text-sm text-[#6B7280] max-w-md mx-auto">
+          <p className="text-sm text-[#bbbbbb] font-light max-w-md mx-auto leading-relaxed">
             Our engineering team supports state disaster authority telemetry and regional digital elevation model ingestion.
           </p>
           <div className="pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#6C63FF] text-white font-display font-bold text-sm shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] hover:bg-[#7B73FF] hover:translate-y-[-1px] transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-black font-bold uppercase tracking-[1.5px] text-xs hover:bg-[#e6e6e6] transition-all"
             >
               <span>Contact Technical Team</span>
               <ArrowRight className="w-4 h-4" />

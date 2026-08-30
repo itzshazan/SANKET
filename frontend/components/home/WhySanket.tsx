@@ -37,16 +37,16 @@ const DIFFERENTIATORS = [
 
 export function WhySanket() {
   return (
-    <section id="section-13" className="w-full bg-[#E0E5EC] py-20 md:py-28">
+    <section id="section-13" className="w-full bg-black text-white py-20 md:py-28 border-y border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
-            System Advantages
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+            <span>System Advantages</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
-            More Than Detection. Built for Early Action.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
+            More Than Detection. Built For Early Action.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+          <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
             SANKET unifies multiple intelligence streams so risk is understood earlier, mapped clearly, and acted upon safely.
           </p>
         </div>
@@ -54,46 +54,53 @@ export function WhySanket() {
         {/* 2x2 Differentiator Grid */}
         <StaggerContainer staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {DIFFERENTIATORS.map((diff) => {
-            const Icon = diff.icon;
+            const IconComponent = diff.icon;
             return (
               <StaggerItem
                 key={diff.title}
-                className="rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-8 sm:p-10 flex flex-col justify-between hover:shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.7)] hover:translate-y-[-2px] transition-all duration-300 group cursor-default"
+                className="bg-[#1a1a1a] border border-[#3c3c3c] p-8 sm:p-10 flex flex-col justify-between hover:border-white transition-all duration-150 group cursor-default"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:scale-105 transition-transform duration-300">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-10 h-10 bg-[#0d0d0d] border border-[#3c3c3c] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                      <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="px-3 py-1 rounded-xl bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] text-xs font-mono font-bold text-[#6B7280]">
+                    <span className="text-xs font-mono font-bold text-white uppercase">
                       {diff.num}
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-display font-extrabold text-[#3D4852] mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans uppercase">
                     {diff.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed">
+                  <p className="text-sm sm:text-base text-[#bbbbbb] font-light leading-relaxed">
                     {diff.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#A3B1C6]/30 flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#6B7280]">Core Architectural Pillar</span>
-                  <span className="text-[#38B2AC] font-bold">● ACTIVE</span>
+                <div className="pt-6 mt-6 border-t border-[#262626] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#7e7e7e] uppercase tracking-wider">Core Pillar</span>
+                  <span className="text-white font-bold">● ACTIVE</span>
                 </div>
               </StaggerItem>
             );
           })}
         </StaggerContainer>
 
-        {/* Molded Quote Card */}
-        <div className="max-w-3xl mx-auto mt-16 text-center p-8 sm:p-12 rounded-[32px] bg-[#E0E5EC] shadow-[inset_8px_8px_16px_rgba(163,177,198,0.6),inset_-8px_-8px_16px_rgba(255,255,255,0.7)]">
-          <blockquote className="text-2xl sm:text-3xl font-display font-extrabold text-[#3D4852] leading-tight">
+        {/* Centered Pull Quote in BMW M Card */}
+        <div className="max-w-3xl mx-auto mt-16 text-center p-8 sm:p-10 bg-[#1a1a1a] border border-[#3c3c3c] relative overflow-hidden">
+          {/* Top M Stripe */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] flex">
+            <div className="w-1/3 bg-[#0066b1]" />
+            <div className="w-1/3 bg-[#1c69d4]" />
+            <div className="w-1/3 bg-[#e22718]" />
+          </div>
+
+          <blockquote className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white leading-tight font-sans">
             &ldquo;One platform. Multiple signals. Clearer decisions.&rdquo;
           </blockquote>
-          <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#6C63FF] mt-4">
+          <div className="text-xs font-mono uppercase tracking-[2px] text-[#7e7e7e] mt-4 font-bold">
             The SANKET Foundation Principle
           </div>
         </div>

@@ -98,31 +98,31 @@ export function CapabilitiesCarousel() {
   const Icon = current.icon;
 
   return (
-    <section id="section-08" className="w-full bg-[#E0E5EC] py-20 md:py-28">
+    <section id="section-08" className="w-full bg-[#0d0d0d] py-20 md:py-28 border-t border-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
-              Core Capabilities
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+              <span>Core Capabilities</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
-              Engineering Built for Geological Precision
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
+              Engineering Built For Geological Precision
             </h2>
           </div>
 
-          {/* Tactile Carousel Controls */}
+          {/* BMW M Circular Carousel Controls */}
           <div className="flex items-center gap-3">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-2xl bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6)] flex items-center justify-center text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 cursor-pointer"
+              className="w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#3c3c3c] flex items-center justify-center text-white hover:border-white hover:bg-white hover:text-black active:scale-95 transition-all cursor-pointer"
               aria-label="Previous capability"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={next}
-              className="w-12 h-12 rounded-2xl bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6)] flex items-center justify-center text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300 cursor-pointer"
+              className="w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#3c3c3c] flex items-center justify-center text-white hover:border-white hover:bg-white hover:text-black active:scale-95 transition-all cursor-pointer"
               aria-label="Next capability"
             >
               <ChevronRight className="w-5 h-5" />
@@ -130,45 +130,52 @@ export function CapabilitiesCarousel() {
           </div>
         </div>
 
-        {/* Molded Capability Card Display */}
-        <div className="rounded-[32px] bg-[#E0E5EC] shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.8)] p-8 sm:p-14">
+        {/* Capability Card Display */}
+        <div className="bg-[#1a1a1a] border border-[#3c3c3c] p-8 sm:p-14 relative overflow-hidden">
+          {/* Top M Stripe */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] flex">
+            <div className="w-1/3 bg-[#0066b1]" />
+            <div className="w-1/3 bg-[#1c69d4]" />
+            <div className="w-1/3 bg-[#e22718]" />
+          </div>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
             >
               {/* Left Column (Span 8) */}
               <div className="lg:col-span-8 space-y-6">
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-11 h-11 bg-[#0d0d0d] border border-[#3c3c3c] flex items-center justify-center text-white">
+                    <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono font-bold text-[#6C63FF] uppercase tracking-wider block">
+                    <span className="px-3 py-1 bg-[#0d0d0d] border border-[#3c3c3c] text-xs font-mono font-bold text-white uppercase tracking-[1px] block">
                       {current.category}
                     </span>
-                    <span className="text-xs font-mono text-[#6B7280]">
+                    <span className="text-xs font-mono text-[#7e7e7e] mt-1 block">
                       {current.tag}
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-[#3D4852] leading-tight">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight font-sans uppercase">
                   {current.headline}
                 </h3>
 
-                <p className="text-base sm:text-lg text-[#6B7280] leading-relaxed max-w-2xl">
+                <p className="text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed max-w-2xl">
                   {current.description}
                 </p>
 
                 <div className="pt-2">
                   <a
                     href="#section-15"
-                    className="inline-flex items-center gap-2 text-sm font-display font-bold text-[#6C63FF] hover:text-[#3D4852] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[1.5px] text-white hover:text-[#1c69d4] transition-colors"
                   >
                     <span>Request sandbox integration</span>
                     <ArrowRight className="w-4 h-4" />
@@ -176,16 +183,16 @@ export function CapabilitiesCarousel() {
                 </div>
               </div>
 
-              {/* Right Column: Inset Metric Pod (Span 4) */}
+              {/* Right Column: Spec Pod (Span 4) */}
               <div className="lg:col-span-4 flex justify-center">
-                <div className="w-full max-w-xs p-8 rounded-[28px] bg-[#E0E5EC] shadow-[inset_8px_8px_16px_rgba(163,177,198,0.7),inset_-8px_-8px_16px_rgba(255,255,255,0.6)] flex flex-col items-center justify-center text-center space-y-2">
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold text-[#6C63FF] tracking-tight">
+                <div className="w-full max-w-xs p-8 bg-[#0d0d0d] border border-[#262626] flex flex-col items-center justify-center text-center space-y-2">
+                  <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-sans">
                     {current.stat}
                   </div>
-                  <div className="text-xs font-mono font-bold text-[#6B7280] uppercase tracking-wider">
+                  <div className="text-xs font-bold uppercase tracking-[1.5px] text-[#7e7e7e]">
                     {current.statLabel}
                   </div>
-                  <div className="w-8 h-1 rounded-full bg-[#38B2AC] mt-2" />
+                  <div className="w-8 h-0.5 bg-white mt-2" />
                 </div>
               </div>
             </motion.div>
