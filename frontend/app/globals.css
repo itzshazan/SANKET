@@ -1,163 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* BMW M Color Tokens */
-  --canvas: #000000;
-  --surface-soft: #0d0d0d;
-  --surface-card: #1a1a1a;
-  --surface-elevated: #262626;
-  --carbon-gray: #2b2b2b;
+  /* Organic / Natural Design Tokens */
+  --background: #FDFCF8;
+  --foreground: #2C2C24;
   
-  --hairline: #3c3c3c;
-  --hairline-strong: #262626;
+  --primary: #5D7052;
+  --primary-foreground: #F3F4F1;
+  --primary-hover: #4C5D42;
+  --primary-soft: #EBF0E8;
 
-  --primary: #ffffff;
-  --ink: #ffffff;
-  --body-strong: #e6e6e6;
-  --body: #bbbbbb;
-  --muted: #7e7e7e;
-  --on-dark: #ffffff;
+  --secondary: #C18C5D;
+  --secondary-foreground: #FFFFFF;
+  --secondary-hover: #AB774B;
+  --secondary-soft: #F9F1EB;
 
-  /* BMW M Tricolor Signature */
-  --m-blue-light: #0066b1;
-  --m-blue-dark: #1c69d4;
-  --m-red: #e22718;
-  --bmw-blue: #1c69d4;
-  --electric-blue: #0653b6;
+  --accent: #E6DCCD;
+  --accent-foreground: #4A4A40;
+  
+  --muted: #F0EBE5;
+  --muted-foreground: #78786C;
+
+  --border: #DED8CF;
+  --border-subtle: rgba(222, 216, 207, 0.6);
+  --destructive: #A85448;
+
+  --card: #FEFEFA;
+  --card-foreground: #2C2C24;
 }
 
 body {
-  background-color: var(--canvas);
-  color: var(--body);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ─── Typography Utility Classes ─── */
-.font-display {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+.font-fraunces,
+.font-serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
 }
 
-.font-body {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
+.font-nunito,
+.font-sans {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .font-mono {
   font-family: 'Source Code Pro', monospace;
 }
 
-/* ─── BMW M Tricolor Stripe ─── */
-.m-stripe {
-  display: flex;
-  height: 4px;
-  width: 100%;
-}
-
-.m-stripe-segment-1 {
-  background-color: #0066b1;
-  flex: 1;
-}
-
-.m-stripe-segment-2 {
-  background-color: #1c69d4;
-  flex: 1;
-}
-
-.m-stripe-segment-3 {
-  background-color: #e22718;
-  flex: 1;
-}
-
-.m-stripe-bg {
-  background: linear-gradient(to right, #0066b1 33.33%, #1c69d4 33.33% 66.66%, #e22718 66.66%);
-}
-
-.m-stripe-badge {
-  position: relative;
-  overflow: hidden;
-}
-
-.m-stripe-badge::before {
-  content: '';
-  position: absolute;
+/* ─── Paper Grain & Noise Texture Layer ─── */
+.paper-grain {
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, #0066b1 33.33%, #1c69d4 33.33% 66.66%, #e22718 66.66%);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* ─── BMW M Engineered Precision Buttons ─── */
-.btn-bmw-primary {
-  background-color: #ffffff;
-  color: #000000;
+/* ─── Organic Shadows (Moss & Clay Tinted) ─── */
+.shadow-moss {
+  box-shadow: 0 4px 20px -2px rgba(93, 112, 82, 0.15);
+}
+
+.shadow-moss-lg {
+  box-shadow: 0 12px 32px -4px rgba(93, 112, 82, 0.20);
+}
+
+.shadow-clay {
+  box-shadow: 0 10px 40px -10px rgba(193, 140, 93, 0.20);
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px -2px rgba(93, 112, 82, 0.12);
+}
+
+.shadow-float {
+  box-shadow: 0 20px 40px -10px rgba(93, 112, 82, 0.15);
+}
+
+/* ─── Organic Blob Geometry ─── */
+.rounded-blob-1 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.rounded-blob-2 {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.rounded-blob-3 {
+  border-radius: 50% 50% 30% 70% / 50% 30% 70% 50%;
+}
+
+/* ─── Asymmetric Handcrafted Card Radii ─── */
+.rounded-organic-1 {
+  border-top-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.rounded-organic-2 {
+  border-top-right-radius: 4rem;
+  border-bottom-left-radius: 4rem;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.rounded-organic-3 {
+  border-top-left-radius: 4.5rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2.5rem;
+  border-bottom-left-radius: 2rem;
+}
+
+/* ─── Tactile Pill Buttons ─── */
+.btn-organic-primary {
+  background-color: #5D7052;
+  color: #F3F4F1;
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-radius: 0px;
-  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 9999px;
+  padding: 12px 28px;
   display: inline-flex;
   items-center: center;
   justify-content: center;
-  gap: 10px;
-  border: 1px solid #ffffff;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 8px;
+  box-shadow: 0 4px 20px -2px rgba(93, 112, 82, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-bmw-primary:hover {
-  background-color: #e6e6e6;
-  border-color: #e6e6e6;
-  transform: translateY(-1px);
+.btn-organic-primary:hover {
+  background-color: #4C5D42;
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px -4px rgba(93, 112, 82, 0.35);
 }
 
-.btn-bmw-primary:active {
-  background-color: #cccccc;
-  transform: translateY(0);
+.btn-organic-primary:active {
+  transform: scale(0.96);
 }
 
-.btn-bmw-outline {
+.btn-organic-outline {
   background-color: transparent;
-  color: #ffffff;
+  color: #C18C5D;
+  font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-radius: 0px;
-  padding: 14px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 15px;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  border: 2px solid #C18C5D;
   display: inline-flex;
   items-center: center;
   justify-content: center;
-  gap: 10px;
-  transition: all 0.2s ease;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-bmw-outline:hover {
-  border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+.btn-organic-outline:hover {
+  background-color: rgba(193, 140, 93, 0.10);
+  transform: scale(1.04);
 }
 
-/* ─── BMW M Spec Cards & Surfaces ─── */
-.card-bmw-spec {
-  background-color: #1a1a1a;
-  border: 1px solid #3c3c3c;
-  border-radius: 0px;
-  color: #ffffff;
+.btn-organic-outline:active {
+  transform: scale(0.96);
 }
 
-.card-bmw-soft {
-  background-color: #0d0d0d;
-  border: 1px solid #262626;
-  border-radius: 0px;
+.btn-organic-ghost {
+  background-color: transparent;
+  color: #5D7052;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  display: inline-flex;
+  items-center: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-organic-ghost:hover {
+  background-color: rgba(93, 112, 82, 0.10);
+  transform: scale(1.03);
+}
+
+/* ─── Organic Cards ─── */
+.card-organic {
+  background-color: #FEFEFA;
+  border: 1px solid rgba(222, 216, 207, 0.7);
+  border-radius: 2rem;
+  box-shadow: 0 4px 20px -2px rgba(93, 112, 82, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-organic:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(93, 112, 82, 0.18);
 }
 
 /* ─── Seamless Infinite Marquee ─── */
@@ -181,12 +232,12 @@ body {
 
 .animate-marquee-left {
   display: flex;
-  animation: marquee-left 32s linear infinite;
+  animation: marquee-left 34s linear infinite;
 }
 
 .animate-marquee-right {
   display: flex;
-  animation: marquee-right 32s linear infinite;
+  animation: marquee-right 34s linear infinite;
 }
 
 .marquee-container:hover .animate-marquee-left,
@@ -196,6 +247,6 @@ body {
 
 /* ─── Focus Styles for Accessibility ─── */
 :focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 2px solid #5D7052;
   outline-offset: 2px;
 }

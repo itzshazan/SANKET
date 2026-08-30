@@ -8,10 +8,15 @@ import {
   Database,
   Globe,
   Server,
-  Cloud,
   Eye,
-  Satellite,
-  Box
+  Activity,
+  Layers,
+  BarChart3,
+  Sparkles,
+  Zap,
+  TrendingUp,
+  LineChart,
+  Palette
 } from "lucide-react";
 
 function BrainIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -23,148 +28,190 @@ function BrainIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const ROW1_AI_ML = [
-  { name: "Python", cat: "Core Engine", icon: Terminal },
-  { name: "TensorFlow", cat: "Deep Learning", icon: Cpu },
-  { name: "PyTorch", cat: "Neural Nets", icon: BrainIcon },
-  { name: "Scikit-learn", cat: "Risk Classifier", icon: Code2 },
-  { name: "OpenCV", cat: "Image Analysis", icon: Eye },
-  { name: "Sentinel-2", cat: "ESA Earth Obs", icon: Satellite },
-  { name: "InSAR Radar", cat: "Surface Creep", icon: Satellite },
-  { name: "Rasterio", cat: "Geospatial Rasters", icon: Database },
-  { name: "GeoPandas", cat: "Spatial Analysis", icon: Globe },
+const STACK_COLUMNS = [
+  {
+    category: "Frontend & Spatial UI",
+    badge: "Client Layer",
+    color: "#5D7052",
+    bg: "#EBF0E8",
+    corner: "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-[1.5rem] rounded-bl-[1.5rem]",
+    items: [
+      { name: "React + Vite", icon: Code2 },
+      { name: "Tailwind", icon: Palette },
+      { name: "MapLibre", icon: Globe },
+      { name: "Recharts", icon: BarChart3 },
+    ],
+  },
+  {
+    category: "Backend & Geospatial DB",
+    badge: "Services Layer",
+    color: "#C18C5D",
+    bg: "#F9F1EB",
+    corner: "rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-[1.5rem] rounded-br-[1.5rem]",
+    items: [
+      { name: "Python", icon: Terminal },
+      { name: "FastAPI", icon: Zap },
+      { name: "PostgreSQL", icon: Database },
+      { name: "PostGIS", icon: Layers },
+      { name: "SQLAlchemy", icon: Server },
+    ],
+  },
+  {
+    category: "Machine Learning & AI",
+    badge: "Physics AI",
+    color: "#A85448",
+    bg: "#FBF0EE",
+    corner: "rounded-tl-[3rem] rounded-tr-[1.5rem] rounded-br-[3rem] rounded-bl-[1.5rem]",
+    items: [
+      { name: "XGBoost", icon: TrendingUp },
+      { name: "LightGBM", icon: Cpu },
+      { name: "PyTorch", icon: BrainIcon },
+      { name: "Scikit-learn", icon: LineChart },
+      { name: "OpenCV", icon: Eye },
+      { name: "SHAP", icon: Activity },
+    ],
+  },
 ];
 
-const ROW2_PLATFORM = [
-  { name: "FastAPI", cat: "Async API", icon: Server },
-  { name: "PostgreSQL", cat: "Relational DB", icon: Database },
-  { name: "PostGIS", cat: "Spatial Extension", icon: Globe },
-  { name: "Next.js", cat: "App Router", icon: Server },
-  { name: "React 19", cat: "Web UI", icon: Code2 },
-  { name: "MapLibre GL", cat: "Vector Tiles", icon: Globe },
-  { name: "Leaflet", cat: "Interactive Maps", icon: Globe },
-  { name: "Docker", cat: "Microservices", icon: Box },
-  { name: "Vercel Edge", cat: "CDN Network", icon: Cloud },
+const ALL_TECH_PILLS = [
+  { name: "React + Vite", cat: "Frontend", icon: Code2, color: "#5D7052" },
+  { name: "Tailwind", cat: "Styling", icon: Palette, color: "#5D7052" },
+  { name: "MapLibre", cat: "Spatial Map", icon: Globe, color: "#5D7052" },
+  { name: "Recharts", cat: "Telemetry Viz", icon: BarChart3, color: "#5D7052" },
+  { name: "Python", cat: "Backend Core", icon: Terminal, color: "#C18C5D" },
+  { name: "FastAPI", cat: "Async API", icon: Zap, color: "#C18C5D" },
+  { name: "PostgreSQL", cat: "Database", icon: Database, color: "#C18C5D" },
+  { name: "PostGIS", cat: "Spatial DB", icon: Layers, color: "#C18C5D" },
+  { name: "SQLAlchemy", cat: "ORM", icon: Server, color: "#C18C5D" },
+  { name: "XGBoost", cat: "ML Booster", icon: TrendingUp, color: "#A85448" },
+  { name: "LightGBM", cat: "Fast Gradient", icon: Cpu, color: "#A85448" },
+  { name: "PyTorch", cat: "Neural Nets", icon: BrainIcon, color: "#A85448" },
+  { name: "Scikit-learn", cat: "ML Pipeline", icon: LineChart, color: "#A85448" },
+  { name: "OpenCV", cat: "Edge CV", icon: Eye, color: "#A85448" },
+  { name: "SHAP", cat: "XAI Explainability", icon: Activity, color: "#A85448" },
 ];
 
 export function TechStackMarquee() {
   return (
-    <section id="section-14" className="w-full bg-[#0d0d0d] py-20 md:py-28 overflow-hidden relative border-b border-[#262626]">
-      {/* Side Fade Gradients */}
-      <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 sm:w-36 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
-          <span>Open Architecture</span>
+    <section id="section-14" className="w-full bg-[#F0EBE5]/40 py-16 sm:py-20 overflow-hidden relative border-b border-[#DED8CF]/70">
+      {/* Header */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EBF0E8] border border-[#5D7052]/30 rounded-full text-xs font-bold uppercase tracking-wider text-[#5D7052] mb-3">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Open Architecture Stack</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#2C2C24]">
           Modern Geospatial & Machine Learning Stack
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
-          Built with battle-tested open-source scientific computing and scalable cloud infrastructure.
+        <p className="mt-3 text-base text-[#78786C] font-normal leading-relaxed max-w-xl mx-auto">
+          Scientific computing, geospatial databases, and deep neural vision fused into a unified risk intelligence engine.
         </p>
       </div>
 
-      {/* Row 1: Left Scroll Track */}
-      <div className="marquee-container flex w-full overflow-hidden select-none mb-4">
-        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6">
-          {ROW1_AI_ML.map((item, idx) => {
-            const IconComponent = item.icon;
-            return (
-              <div
-                key={`row1-t1-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
-              >
-                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-                  <IconComponent className="w-3.5 h-3.5" />
-                </div>
-                <div className="text-left">
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
-                    {item.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#7e7e7e]">
-                    {item.cat}
+      {/* 3 Compact Column Cards */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          {STACK_COLUMNS.map((col) => (
+            <div
+              key={col.category}
+              className={`bg-[#FEFEFA] border border-[#DED8CF] p-6 sm:p-7 flex flex-col justify-between shadow-soft hover:shadow-float hover:-translate-y-1 transition-all duration-300 ${col.corner}`}
+            >
+              <div>
+                {/* Header Badge & Title */}
+                <div className="flex items-center justify-between mb-3">
+                  <span
+                    className="px-3 py-0.5 rounded-full text-xs font-bold"
+                    style={{ backgroundColor: col.bg, color: col.color }}
+                  >
+                    {col.badge}
                   </span>
                 </div>
-              </div>
-            );
-          })}
-        </div>
 
-        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-left py-2 pr-4 sm:pr-6" aria-hidden="true">
-          {ROW1_AI_ML.map((item, idx) => {
-            const IconComponent = item.icon;
-            return (
-              <div
-                key={`row1-t2-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
-              >
-                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-                  <IconComponent className="w-3.5 h-3.5" />
-                </div>
-                <div className="text-left">
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
-                    {item.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#7e7e7e]">
-                    {item.cat}
-                  </span>
+                <h3 className="text-lg font-serif font-bold text-[#2C2C24] mb-5">
+                  {col.category}
+                </h3>
+
+                {/* Compact Tactile Pill Grid */}
+                <div className="flex flex-wrap gap-2.5">
+                  {col.items.map((item) => {
+                    const ItemIcon = item.icon;
+                    return (
+                      <div
+                        key={item.name}
+                        className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#FDFCF8] border border-[#DED8CF] hover:border-[#5D7052] hover:bg-white hover:scale-105 transition-all duration-200 shadow-2xs group cursor-default"
+                      >
+                        <div
+                          className="w-5 h-5 rounded-full flex items-center justify-center shrink-0"
+                          style={{ backgroundColor: col.bg, color: col.color }}
+                        >
+                          <ItemIcon className="w-3 h-3" />
+                        </div>
+                        <span className="font-serif font-bold text-xs text-[#2C2C24]">
+                          {item.name}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-            );
-          })}
+
+              <div className="pt-4 mt-5 border-t border-[#DED8CF]/60 text-[11px] font-bold uppercase tracking-wider text-[#78786C]">
+                {col.items.length} Modules Integrated
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Row 2: Right Scroll Track */}
-      <div className="marquee-container flex w-full overflow-hidden select-none">
-        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-right py-2 pr-4 sm:pr-6">
-          {ROW2_PLATFORM.map((item, idx) => {
-            const IconComponent = item.icon;
-            return (
-              <div
-                key={`row2-t1-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
-              >
-                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-                  <IconComponent className="w-3.5 h-3.5" />
-                </div>
-                <div className="text-left">
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
-                    {item.name}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#7e7e7e]">
-                    {item.cat}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      {/* Infinite Moving Marquee Ticker */}
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-[#F0EBE5]/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 sm:w-36 bg-gradient-to-l from-[#F0EBE5]/90 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex shrink-0 gap-4 sm:gap-6 animate-marquee-right py-2 pr-4 sm:pr-6" aria-hidden="true">
-          {ROW2_PLATFORM.map((item, idx) => {
-            const IconComponent = item.icon;
-            return (
-              <div
-                key={`row2-t2-${item.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 bg-[#1a1a1a] border border-[#3c3c3c] text-white hover:border-white transition-all duration-150 shrink-0 group"
-              >
-                <div className="w-7 h-7 bg-[#0d0d0d] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-                  <IconComponent className="w-3.5 h-3.5" />
-                </div>
-                <div className="text-left">
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider block text-white">
+        <div className="marquee-container flex w-full overflow-hidden select-none">
+          <div className="flex shrink-0 gap-3.5 sm:gap-5 animate-marquee-left py-1.5 pr-3.5 sm:pr-5">
+            {ALL_TECH_PILLS.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={`pill-t1-${item.name}-${idx}`}
+                  className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#FEFEFA] border border-[#DED8CF] shadow-2xs text-[#2C2C24] hover:border-[#5D7052] hover:scale-105 transition-all duration-200 shrink-0 group"
+                >
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: `${item.color}15`, color: item.color }}
+                  >
+                    <IconComponent className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-xs font-serif font-bold text-[#2C2C24]">
                     {item.name}
                   </span>
-                  <span className="text-[10px] font-mono text-[#7e7e7e]">
-                    {item.cat}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="flex shrink-0 gap-3.5 sm:gap-5 animate-marquee-left py-1.5 pr-3.5 sm:pr-5" aria-hidden="true">
+            {ALL_TECH_PILLS.map((item, idx) => {
+              const IconComponent = item.icon;
+              return (
+                <div
+                  key={`pill-t2-${item.name}-${idx}`}
+                  className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#FEFEFA] border border-[#DED8CF] shadow-2xs text-[#2C2C24] hover:border-[#5D7052] hover:scale-105 transition-all duration-200 shrink-0 group"
+                >
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: `${item.color}15`, color: item.color }}
+                  >
+                    <IconComponent className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-xs font-serif font-bold text-[#2C2C24]">
+                    {item.name}
                   </span>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

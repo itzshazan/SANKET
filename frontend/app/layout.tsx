@@ -79,11 +79,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-black text-[#bbbbbb] antialiased selection:bg-[#e22718] selection:text-white flex flex-col font-sans">
+      <body className="min-h-screen bg-[#FDFCF8] text-[#2C2C24] antialiased selection:bg-[#5D7052] selection:text-[#F3F4F1] flex flex-col font-sans relative">
+        {/* Paper Grain Overlay */}
+        <div className="paper-grain" aria-hidden="true" />
         <SmoothScroll>
           <ScrollProgressBar />
           <Navbar />

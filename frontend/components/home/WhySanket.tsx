@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Database, Eye, MapPin, BellRing } from "lucide-react";
+import { Database, Eye, MapPin, BellRing, Sparkles } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "../shared/ScrollReveal";
 
 const DIFFERENTIATORS = [
@@ -37,16 +37,16 @@ const DIFFERENTIATORS = [
 
 export function WhySanket() {
   return (
-    <section id="section-13" className="w-full bg-black text-white py-20 md:py-28 border-y border-[#262626]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="section-13" className="w-full bg-[#FDFCF8] py-20 md:py-28 border-y border-[#DED8CF]/70">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EBF0E8] border border-[#5D7052]/30 rounded-full text-xs font-bold uppercase tracking-wider text-[#5D7052] mb-4">
             <span>System Advantages</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#2C2C24]">
             More Than Detection. Built For Early Action.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#78786C] font-normal leading-relaxed">
             SANKET unifies multiple intelligence streams so risk is understood earlier, mapped clearly, and acted upon safely.
           </p>
         </div>
@@ -58,49 +58,42 @@ export function WhySanket() {
             return (
               <StaggerItem
                 key={diff.title}
-                className="bg-[#1a1a1a] border border-[#3c3c3c] p-8 sm:p-10 flex flex-col justify-between hover:border-white transition-all duration-150 group cursor-default"
+                className="bg-[#FEFEFA] border border-[#DED8CF] rounded-[2.5rem] p-8 sm:p-10 flex flex-col justify-between hover:border-[#5D7052] shadow-[0_4px_20px_-2px_rgba(93,112,82,0.10)] hover:shadow-[0_20px_40px_-10px_rgba(93,112,82,0.18)] transition-all duration-300 group cursor-default"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-10 h-10 bg-[#0d0d0d] border border-[#3c3c3c] text-white flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
-                      <IconComponent className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-2xl bg-[#5D7052]/10 text-[#5D7052] flex items-center justify-center group-hover:bg-[#5D7052] group-hover:text-[#F3F4F1] transition-colors">
+                      <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-white uppercase">
+                    <span className="text-xs font-bold text-[#5D7052] bg-[#EBF0E8] px-3 py-1 rounded-full">
                       {diff.num}
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans uppercase">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#2C2C24] mb-3">
                     {diff.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-[#bbbbbb] font-light leading-relaxed">
+                  <p className="text-base text-[#78786C] font-normal leading-relaxed">
                     {diff.description}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#262626] flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#7e7e7e] uppercase tracking-wider">Core Pillar</span>
-                  <span className="text-white font-bold">● ACTIVE</span>
+                <div className="pt-6 mt-6 border-t border-[#DED8CF]/60 flex items-center justify-between text-xs font-bold">
+                  <span className="text-[#78786C] uppercase tracking-wider">Core Pillar</span>
+                  <span className="text-[#5D7052]">● ACTIVE</span>
                 </div>
               </StaggerItem>
             );
           })}
         </StaggerContainer>
 
-        {/* Centered Pull Quote in BMW M Card */}
-        <div className="max-w-3xl mx-auto mt-16 text-center p-8 sm:p-10 bg-[#1a1a1a] border border-[#3c3c3c] relative overflow-hidden">
-          {/* Top M Stripe */}
-          <div className="absolute top-0 left-0 right-0 h-[3px] flex">
-            <div className="w-1/3 bg-[#0066b1]" />
-            <div className="w-1/3 bg-[#1c69d4]" />
-            <div className="w-1/3 bg-[#e22718]" />
-          </div>
-
-          <blockquote className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white leading-tight font-sans">
+        {/* Centered Wabi-Sabi Pull Quote */}
+        <div className="max-w-3xl mx-auto mt-16 text-center p-8 sm:p-12 bg-[#EBF0E8] border border-[#5D7052]/40 rounded-[2.5rem] shadow-soft">
+          <blockquote className="text-2xl sm:text-3xl font-serif font-bold text-[#2C2C24] leading-snug">
             &ldquo;One platform. Multiple signals. Clearer decisions.&rdquo;
           </blockquote>
-          <div className="text-xs font-mono uppercase tracking-[2px] text-[#7e7e7e] mt-4 font-bold">
+          <div className="text-xs font-bold uppercase tracking-wider text-[#5D7052] mt-4">
             The SANKET Foundation Principle
           </div>
         </div>

@@ -84,24 +84,26 @@ function StatCounter({ stat }: { stat: StatItem }) {
 
 export function StatsBar() {
   return (
-    <section id="section-02" className="w-full bg-black text-white py-16 sm:py-20 border-y border-[#262626]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#262626]">
-          {STATS.map((stat, idx) => (
-            <div
-              key={stat.label}
-              className={`flex flex-col items-center justify-center text-center px-4 ${
-                idx > 0 && idx % 2 === 0 ? "pt-6 md:pt-0" : ""
-              }`}
-            >
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 font-sans">
-                <StatCounter stat={stat} />
+    <section id="section-02" className="w-full bg-[#FDFCF8] py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#F0EBE5]/60 border border-[#DED8CF] rounded-[2.5rem] p-8 sm:p-12 shadow-soft">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-6 divide-y md:divide-y-0 md:divide-x divide-[#DED8CF]/80">
+            {STATS.map((stat, idx) => (
+              <div
+                key={stat.label}
+                className={`flex flex-col items-center justify-center text-center px-4 ${
+                  idx > 0 && idx % 2 === 0 ? "pt-6 md:pt-0" : ""
+                }`}
+              >
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#5D7052] tracking-tight mb-2">
+                  <StatCounter stat={stat} />
+                </div>
+                <div className="text-xs sm:text-sm font-bold font-sans text-[#78786C]">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-xs font-bold font-sans uppercase tracking-[1.5px] text-[#7e7e7e]">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

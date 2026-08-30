@@ -12,25 +12,25 @@ import { StaggerContainer, StaggerItem } from "../shared/ScrollReveal";
 const RISK_LEVELS = [
   {
     level: "Normal",
-    color: "#0066B1",
+    color: "#5D7052",
     meaning: "No significant ground risk indicators",
     action: "Routine continuous satellite & sensor telemetry",
   },
   {
     level: "Watch",
-    color: "#EAB308",
+    color: "#C18C5D",
     meaning: "Precipitation and soil moisture elevated",
     action: "Increase satellite pass frequency & verify piezometers",
   },
   {
     level: "Warning",
-    color: "#1C69D4",
+    color: "#AB774B",
     meaning: "Surface scarp displacement & high pore pressure",
     action: "Notify SDMA/NDMA commanders and prepare highway traffic teams",
   },
   {
     level: "Danger",
-    color: "#E22718",
+    color: "#A85448",
     meaning: "Critical failure threshold exceeded (<1.0 FoS)",
     action: "Immediate road closures, siren broadcast & active evacuation",
   },
@@ -65,16 +65,16 @@ const CHANNELS = [
 
 export function EarlyWarning() {
   return (
-    <section id="section-10" className="w-full bg-[#0d0d0d] py-20 md:py-28 border-t border-[#262626]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="section-10" className="w-full bg-[#F0EBE5]/40 py-20 md:py-28 border-t border-[#DED8CF]/70">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1 bg-[#1a1a1a] border border-[#3c3c3c] text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#EBF0E8] border border-[#5D7052]/30 rounded-full text-xs font-bold uppercase tracking-wider text-[#5D7052] mb-4">
             <span>Dissemination Network</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white font-sans uppercase">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold tracking-tight text-[#2C2C24]">
             Multi-Tier Risk Matrix & Dissemination
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#bbbbbb] font-light leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-[#78786C] font-normal leading-relaxed">
             SANKET categorizes threat levels into actionable tiers and broadcasts warnings across redundant channels.
           </p>
         </div>
@@ -84,26 +84,26 @@ export function EarlyWarning() {
           {RISK_LEVELS.map((item) => (
             <div
               key={item.level}
-              className="bg-[#1a1a1a] border border-[#3c3c3c] p-6 flex flex-col justify-between hover:border-white transition-all border-t-4"
+              className="bg-[#FEFEFA] border border-[#DED8CF] rounded-3xl p-6 flex flex-col justify-between hover:shadow-soft transition-all border-t-4 shadow-2xs"
               style={{ borderTopColor: item.color }}
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xl font-bold uppercase tracking-wider text-white">
+                  <span className="text-xl font-serif font-bold text-[#2C2C24]">
                     {item.level}
                   </span>
                   <span
-                    className="w-3 h-3"
+                    className="w-3.5 h-3.5 rounded-full"
                     style={{ backgroundColor: item.color }}
                   />
                 </div>
 
-                <p className="text-xs text-[#bbbbbb] font-light leading-relaxed mb-4">
+                <p className="text-xs text-[#78786C] leading-relaxed mb-4">
                   {item.meaning}
                 </p>
               </div>
 
-              <div className="p-3 bg-[#0d0d0d] border border-[#262626] text-xs font-mono text-white">
+              <div className="p-3.5 bg-[#FDFCF8] rounded-2xl border border-[#DED8CF] text-xs font-bold text-[#4A4A40]">
                 Action: {item.action}
               </div>
             </div>
@@ -117,23 +117,23 @@ export function EarlyWarning() {
             return (
               <StaggerItem
                 key={channel.title}
-                className="bg-[#1a1a1a] border border-[#3c3c3c] p-6 flex flex-col justify-between hover:border-white transition-all"
+                className="bg-[#FEFEFA] border border-[#DED8CF] rounded-3xl p-6 flex flex-col justify-between hover:shadow-soft hover:border-[#5D7052] transition-all shadow-2xs group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-10 h-10 bg-[#0d0d0d] border border-[#3c3c3c] text-white flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-2xl bg-[#5D7052]/10 text-[#5D7052] flex items-center justify-center group-hover:bg-[#5D7052] group-hover:text-[#F3F4F1] transition-colors">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="px-2 py-0.5 bg-[#0d0d0d] border border-[#262626] text-[10px] font-mono font-bold text-white uppercase tracking-wider">
+                    <span className="px-3 py-1 bg-[#EBF0E8] text-[11px] font-bold text-[#5D7052] rounded-full">
                       {channel.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-2">
+                  <h3 className="text-base font-serif font-bold text-[#2C2C24] mb-2">
                     {channel.title}
                   </h3>
 
-                  <p className="text-xs text-[#bbbbbb] font-light leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#78786C] leading-relaxed">
                     {channel.description}
                   </p>
                 </div>

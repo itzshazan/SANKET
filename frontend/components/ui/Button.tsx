@@ -8,31 +8,31 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className = "", variant = "primary", size = "md", ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-sans font-bold uppercase tracking-[1.5px] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-none cursor-pointer";
+      "inline-flex items-center justify-center font-sans font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5D7052] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-full cursor-pointer";
 
     const variants: Record<string, string> = {
       primary:
-        "bg-white text-black hover:bg-[#e6e6e6] active:scale-[0.98]",
+        "bg-[#5D7052] text-[#F3F4F1] hover:bg-[#4C5D42] hover:scale-105 active:scale-95 shadow-[0_4px_20px_-2px_rgba(93,112,82,0.25)]",
       secondary:
-        "bg-[#1a1a1a] text-white border border-[#3c3c3c] hover:border-white",
+        "bg-[#C18C5D] text-white hover:bg-[#AB774B] hover:scale-105 active:scale-95 shadow-[0_4px_20px_-2px_rgba(193,140,93,0.25)]",
       outline:
-        "bg-transparent text-white border border-white hover:bg-white/10",
+        "bg-transparent text-[#C18C5D] border-2 border-[#C18C5D] hover:bg-[#C18C5D]/10 hover:scale-105 active:scale-95",
       ghost:
-        "bg-transparent text-[#bbbbbb] hover:text-white hover:bg-white/5",
+        "bg-transparent text-[#5D7052] hover:bg-[#5D7052]/10 hover:scale-103",
       "primary-lime":
-        "bg-white text-black hover:bg-[#e6e6e6]",
+        "bg-[#5D7052] text-[#F3F4F1] hover:bg-[#4C5D42]",
       "primary-forest":
-        "bg-[#1c69d4] text-white hover:bg-[#0066b1]",
+        "bg-[#5D7052] text-[#F3F4F1] hover:bg-[#4C5D42]",
       "ghost-light":
-        "bg-transparent text-[#bbbbbb] hover:text-white hover:bg-white/5",
+        "bg-transparent text-[#78786C] hover:text-[#2C2C24] hover:bg-[#F0EBE5]",
       "ghost-dark":
-        "bg-transparent text-white border border-[#3c3c3c] hover:bg-white/10",
+        "bg-transparent text-[#2C2C24] border border-[#DED8CF] hover:bg-[#F0EBE5]",
     };
 
     const sizes = {
-      sm: "h-9 px-4 text-xs tracking-wider",
-      md: "h-11 px-6 py-2.5 text-xs tracking-[1.5px]",
-      lg: "h-13 px-8 text-sm tracking-[1.5px]",
+      sm: "h-10 px-5 text-xs rounded-full",
+      md: "h-12 px-7 py-3 text-sm rounded-full",
+      lg: "h-14 px-9 text-base rounded-full",
     };
 
     const classes = `${baseStyles} ${variants[variant] || variants.primary} ${sizes[size]} ${className}`;

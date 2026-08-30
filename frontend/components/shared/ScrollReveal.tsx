@@ -154,7 +154,7 @@ export function ScrollProgressBar() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0066b1] via-[#1c69d4] to-[#e22718] origin-left z-[100] pointer-events-none shadow-[0_0_10px_rgba(226,39,24,0.6)]"
+      className="fixed top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#5D7052] via-[#7B926E] to-[#C18C5D] origin-left z-[100] pointer-events-none shadow-[0_2px_10px_rgba(93,112,82,0.4)]"
     />
   );
 }
