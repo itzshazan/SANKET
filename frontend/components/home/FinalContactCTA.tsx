@@ -1,25 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Award, CheckCircle2, Loader2, Send, MapPin, Shield } from "lucide-react";
-import { SlideReveal } from "../shared/ScrollReveal";
-
-function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-      <path d="M9 18c-4.51 2-5-2-7-2" />
-    </svg>
-  );
-}
-
-function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 16.59c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.182 8.182 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.74 2.65 4.21 3.72.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z" />
-    </svg>
-  );
-}
+import { Mail, CheckCircle2, Loader2, Send, MapPin, ShieldCheck, ArrowRight } from "lucide-react";
 
 export function FinalContactCTA() {
   const [submitted, setSubmitted] = useState(false);
@@ -28,167 +10,112 @@ export function FinalContactCTA() {
     name: "",
     organization: "",
     email: "",
-    phone: "",
-    role: "",
+    region: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate brief network submission
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 1000);
+    }, 800);
   };
 
   return (
-    <section id="section-15" className="w-full bg-[#273C1E] border-b border-[#37502B] py-20 md:py-28 text-white relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#C8EA3B] opacity-[0.04] blur-[150px] pointer-events-none rounded-full" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="section-15" className="w-full bg-[#E0E5EC] py-20 md:py-28 text-[#3D4852]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Contact & Project Info (Span 5) */}
-          <SlideReveal direction="left" className="lg:col-span-5 space-y-8">
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-white leading-[1.1] mb-4">
-                Don&apos;t Wait for the Landslide.
-              </h2>
-
-              <p className="text-base sm:text-lg text-[#C5D7BD] leading-relaxed">
-                Turn environmental and geospatial data into actionable risk intelligence.
-              </p>
+          {/* Left Column (Span 6) */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF]">
+              Agency Sandbox Onboarding
             </div>
 
-            {/* Contact Details List */}
-            <div className="space-y-4 pt-4 border-t border-[#37502B]">
-              <div className="p-4 rounded-2xl bg-[#213318] border border-[#37502B] flex items-center gap-4 hover-card-rise">
-                <div className="w-10 h-10 rounded-xl bg-[#1A2614] text-[#C8EA3B] flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#7E9473] block">
-                    Inquiries
-                  </span>
-                  <a href="mailto:Shazankhan324@gmail.com" className="text-sm font-sans font-bold text-white hover:text-[#C8EA3B] transition-colors">
-                    Shazankhan324@gmail.com
-                  </a>
-                </div>
-              </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight leading-[1.12]">
+              Deploy SANKET On Your Highway Corridor.
+            </h2>
 
-              <div className="p-4 rounded-2xl bg-[#213318] border border-[#37502B] flex items-center gap-4 hover:border-[#25D366]/50 hover-card-rise transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-[#1A2614] text-[#25D366] flex items-center justify-center shrink-0">
-                  <WhatsAppIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#7E9473] block">
-                    WhatsApp / Direct Desk
-                  </span>
-                  <a
-                    href="https://wa.me/919045597305"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-sans font-bold text-white hover:text-[#25D366] transition-colors"
-                  >
-                    +91 90455 97305
-                  </a>
-                </div>
-              </div>
+            <p className="text-base sm:text-lg text-[#6B7280] leading-relaxed">
+              Connect your regional digital elevation model (DEM) and evaluate live pore pressure telemetry in under 48 hours. No physical hardware installation required to begin satellite InSAR coverage.
+            </p>
 
-              <div className="p-4 rounded-2xl bg-[#213318] border border-[#37502B] flex items-center gap-4 hover-card-rise">
-                <div className="w-10 h-10 rounded-xl bg-[#1A2614] text-[#C8EA3B] flex items-center justify-center shrink-0">
-                  <Award className="w-5 h-5" />
+            {/* Inset Friction Reducers */}
+            <div className="space-y-3 pt-4 border-t border-[#A3B1C6]/30">
+              <div className="flex items-start gap-3 text-sm text-[#3D4852]">
+                <div className="w-5 h-5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] flex items-center justify-center text-[#38B2AC] shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#7E9473] block">
-                    Built For
-                  </span>
-                  <span className="text-sm font-sans font-bold text-white">
-                    Smart India Hackathon (SIH 2026)
-                  </span>
-                </div>
+                <span>Pre-calibrated test datasets for Chamoli, Kedarnath & Western Ghats</span>
               </div>
-
-              <div className="p-4 rounded-2xl bg-[#213318] border border-[#37502B] flex items-center gap-4 hover-card-rise">
-                <div className="w-10 h-10 rounded-xl bg-[#1A2614] text-[#C8EA3B] flex items-center justify-center shrink-0">
-                  <GithubIcon className="w-5 h-5" />
+              <div className="flex items-start gap-3 text-sm text-[#3D4852]">
+                <div className="w-5 h-5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] flex items-center justify-center text-[#38B2AC] shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#7E9473] block">
-                    Open Repository
-                  </span>
-                  <a href="https://github.com/itzshazan" target="_blank" rel="noopener noreferrer" className="text-sm font-mono font-medium text-[#C8EA3B] hover:underline">
-                    github.com/itzshazan
-                  </a>
+                <span>Standard OASIS Common Alerting Protocol (CAP) API webhooks</span>
+              </div>
+              <div className="flex items-start gap-3 text-sm text-[#3D4852]">
+                <div className="w-5 h-5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] flex items-center justify-center text-[#38B2AC] shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
+                <span>Direct ingestion of state automatic weather station (AWS) rainfall feeds</span>
               </div>
             </div>
-          </SlideReveal>
 
-          {/* Right Column: Demo Request Form (Span 7) */}
-          <SlideReveal direction="right" className="lg:col-span-7">
-            <div className="rounded-3xl bg-[#213318] border border-[#37502B] p-6 sm:p-10 shadow-2xl relative overflow-hidden hover-card-rise">
-              <div className="pb-6 border-b border-[#37502B] mb-6 flex items-center justify-between">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
-                    Request an Institutional Demo
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#C5D7BD] mt-1">
-                    Connect your regional terrain or explore SANKET for disaster management.
-                  </p>
-                </div>
-                <Shield className="w-6 h-6 text-[#C8EA3B] hidden sm:block shrink-0" />
-              </div>
+            <div className="pt-2 text-xs font-mono text-[#6B7280]">
+              Direct Inquiries: <a href="mailto:team@sanket.in" className="text-[#6C63FF] underline font-bold">team@sanket.in</a> · Smart India Hackathon
+            </div>
+          </div>
 
+          {/* Right Column: Molded Submission Form (Span 6) */}
+          <div className="lg:col-span-6">
+            <div className="rounded-[32px] bg-[#E0E5EC] shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.8)] p-8 sm:p-10">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-14 h-14 rounded-full bg-[#C8EA3B]/20 border border-[#C8EA3B] flex items-center justify-center mx-auto text-[#C8EA3B]">
+                  <div className="w-16 h-16 rounded-full bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.6)] flex items-center justify-center mx-auto text-[#38B2AC]">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="text-xl font-display font-bold text-white">
-                    Demo Request Submitted
-                  </h4>
-                  <p className="text-sm text-[#C5D7BD] max-w-sm mx-auto leading-relaxed">
-                    Thank you! The SANKET engineering team will contact you promptly with access to the sandbox GIS portal.
+                  <h3 className="text-xl font-display font-extrabold text-[#3D4852]">
+                    Agency Sandbox Invitation Dispatched
+                  </h3>
+                  <p className="text-sm text-[#6B7280] max-w-sm mx-auto leading-relaxed">
+                    API credentials and digital sandbox corridor access have been dispatched to your official email.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 font-sans">
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-mono font-bold text-[#3D4852]">
+                      Full Name & Title *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="e.g. Dr. A. K. Verma — Chief Operations Officer"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-[#E0E5EC] shadow-[inset_6px_6px_10px_rgba(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.6)] text-[#3D4852] placeholder:text-[#A0AEC0] text-sm focus:outline-none focus:ring-2 focus:ring-[#6C63FF] transition-all"
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono font-medium text-[#C5D7BD]">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Dr. Anand Verma"
-                        className="w-full px-4 py-3 rounded-xl bg-[#1A2614] border border-[#37502B] text-white placeholder:text-[#7E9473] text-sm focus:outline-none focus:border-[#C8EA3B] focus:ring-1 focus:ring-[#C8EA3B] transition-colors"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="block text-xs font-mono font-medium text-[#C5D7BD]">
-                        Organization / Agency *
+                      <label className="block text-xs font-mono font-bold text-[#3D4852]">
+                        Agency / Department *
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                        placeholder="State Disaster Management Authority (SDMA)"
-                        className="w-full px-4 py-3 rounded-xl bg-[#1A2614] border border-[#37502B] text-white placeholder:text-[#7E9473] text-sm focus:outline-none focus:border-[#C8EA3B] focus:ring-1 focus:ring-[#C8EA3B] transition-colors"
+                        placeholder="State Disaster Authority"
+                        className="w-full px-4 py-3.5 rounded-2xl bg-[#E0E5EC] shadow-[inset_6px_6px_10px_rgba(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.6)] text-[#3D4852] placeholder:text-[#A0AEC0] text-sm focus:outline-none focus:ring-2 focus:ring-[#6C63FF] transition-all"
                       />
                     </div>
-                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono font-medium text-[#C5D7BD]">
+                      <label className="block text-xs font-mono font-bold text-[#3D4852]">
                         Official Email *
                       </label>
                       <input
@@ -196,54 +123,41 @@ export function FinalContactCTA() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="anand.verma@gov.in"
-                        className="w-full px-4 py-3 rounded-xl bg-[#1A2614] border border-[#37502B] text-white placeholder:text-[#7E9473] text-sm focus:outline-none focus:border-[#C8EA3B] focus:ring-1 focus:ring-[#C8EA3B] transition-colors"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="block text-xs font-mono font-medium text-[#C5D7BD]">
-                        Contact Phone
-                      </label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
-                        className="w-full px-4 py-3 rounded-xl bg-[#1A2614] border border-[#37502B] text-white placeholder:text-[#7E9473] text-sm focus:outline-none focus:border-[#C8EA3B] focus:ring-1 focus:ring-[#C8EA3B] transition-colors"
+                        placeholder="officer@gov.in"
+                        className="w-full px-4 py-3.5 rounded-2xl bg-[#E0E5EC] shadow-[inset_6px_6px_10px_rgba(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.6)] text-[#3D4852] placeholder:text-[#A0AEC0] text-sm focus:outline-none focus:ring-2 focus:ring-[#6C63FF] transition-all"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono font-medium text-[#C5D7BD]">
-                      Region of Interest & Notes *
+                    <label className="block text-xs font-mono font-bold text-[#3D4852]">
+                      Target Mountain Sector / Highway *
                     </label>
-                    <textarea
+                    <input
+                      type="text"
                       required
-                      rows={3}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us about the vulnerable mountain corridor or monitoring requirements..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#1A2614] border border-[#37502B] text-white placeholder:text-[#7E9473] text-sm focus:outline-none focus:border-[#C8EA3B] focus:ring-1 focus:ring-[#C8EA3B] transition-colors resize-none"
+                      value={formData.region}
+                      onChange={(e) => setFormData({ ...formData, region: e.target.value })}
+                      placeholder="e.g. NH-58 Chamoli Sector / Western Ghats"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-[#E0E5EC] shadow-[inset_6px_6px_10px_rgba(163,177,198,0.6),inset_-6px_-6px_10px_rgba(255,255,255,0.6)] text-[#3D4852] placeholder:text-[#A0AEC0] text-sm focus:outline-none focus:ring-2 focus:ring-[#6C63FF] transition-all"
                     />
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-3">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-[#C8EA3B] text-[#1A2614] font-display font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-[#E4F76E] shadow-[0_0_20px_rgba(200,234,59,0.3)] hover:shadow-[0_0_30px_rgba(200,234,59,0.5)] btn-spring cursor-pointer disabled:opacity-60"
+                      className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-[#6C63FF] text-white font-display font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-[#7B73FF] shadow-[8px_8px_16px_rgba(163,177,198,0.7),-8px_-8px_16px_rgba(255,255,255,0.8)] hover:translate-y-[-1px] active:translate-y-[0.5px] active:shadow-[inset_3px_3px_6px_rgba(0,0,0,0.35)] transition-all cursor-pointer disabled:opacity-60"
                     >
                       {loading ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Dispatching Request...</span>
+                          <span>Generating Sandbox Access...</span>
                         </>
                       ) : (
                         <>
-                          <span>Request Institutional Demo</span>
-                          <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          <span>Request Agency Sandbox Access</span>
+                          <ArrowRight className="w-4 h-4" />
                         </>
                       )}
                     </button>
@@ -251,7 +165,7 @@ export function FinalContactCTA() {
                 </form>
               )}
             </div>
-          </SlideReveal>
+          </div>
         </div>
       </div>
     </section>

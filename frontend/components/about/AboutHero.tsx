@@ -1,58 +1,56 @@
 "use client";
 
 import React from "react";
-import { Section } from "../ui/Section";
-import { Grid, GridItem } from "../ui/Grid";
 import { ShieldCheck, Satellite, Award } from "lucide-react";
 
 export function AboutHero() {
   return (
-    <Section className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 border-b border-[#37502B] bg-[#213318] text-white text-center flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(200, 234, 59, 0.4) 1px, transparent 1px)`,
-            backgroundSize: "28px 28px",
-          }}
-        />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C8EA3B] opacity-[0.06] blur-[140px] rounded-full" />
+    <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 bg-[#E0E5EC] text-[#3D4852] text-center flex flex-col items-center justify-center overflow-hidden">
+      {/* Background Tactile Depth Rings */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
+        <div className="w-[700px] h-[700px] rounded-full shadow-[inset_12px_12px_24px_rgba(163,177,198,0.4),inset_-12px_-12px_24px_rgba(255,255,255,0.6)] opacity-50 animate-float" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#C8EA3B]/10 border border-[#C8EA3B]/30 text-[#C8EA3B] text-xs font-mono font-semibold uppercase tracking-wider mb-2">
-          <Award className="w-4 h-4 text-[#C8EA3B]" />
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] uppercase tracking-wider mb-2">
+          <Award className="w-4 h-4 text-[#6C63FF]" />
           Smart India Hackathon (SIH 2026)
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-[#3D4852] leading-tight">
           Predict. Prepare. Protect.
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-[#C5D7BD] font-normal max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-[#6B7280] font-normal max-w-3xl mx-auto leading-relaxed">
           SANKET is an AI-powered landslide early warning and risk intelligence platform engineered to safeguard mountain communities and critical highway corridors.
         </p>
       </div>
 
-      <Grid className="relative z-10 mt-16 sm:mt-20 text-left max-w-5xl mx-auto gap-8 sm:gap-12">
-        <GridItem mdColSpan={6} className="space-y-4 rounded-2xl bg-[#1A2614] border border-[#37502B] p-6 sm:p-8">
-          <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#C8EA3B] flex items-center gap-2">
-            <Satellite className="w-4 h-4" /> The Vision
-          </h2>
-          <p className="text-sm text-[#C5D7BD] leading-relaxed">
-            Landslides rarely strike without geological precursors. SANKET fuses ESA Sentinel-2 remote sensing, real-time rainfall forecasts, in-situ soil moisture sensors, and computer vision to identify risk before slopes collapse.
+      <div className="relative z-10 mt-16 sm:mt-20 text-left max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-4 rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-8 sm:p-10">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#6C63FF]">
+            <Satellite className="w-4 h-4" /> The Scientific Vision
+          </div>
+          <h3 className="text-xl font-display font-extrabold text-[#3D4852]">
+            Early Physics-Based Detection
+          </h3>
+          <p className="text-sm text-[#6B7280] leading-relaxed">
+            Landslides rarely strike without subsurface precursors. SANKET fuses Sentinel-2 InSAR radar passes, high-resolution DEM terrain gradients, rainfall forecasts, and piezometer sensors to calculate impending failure hours before mass displacement.
           </p>
-        </GridItem>
-        <GridItem mdColSpan={6} className="space-y-4 rounded-2xl bg-[#1A2614] border border-[#37502B] p-6 sm:p-8">
-          <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-[#C8EA3B] flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4" /> National Impact
-          </h2>
-          <p className="text-sm text-[#C5D7BD] leading-relaxed">
-            Built in alignment with NDMA protocols and state disaster management workflows, SANKET provides actionable early warnings to highway authorities, rescue battalions, and local vulnerable populations.
+        </div>
+
+        <div className="space-y-4 rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-8 sm:p-10">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#38B2AC]">
+            <ShieldCheck className="w-4 h-4" /> Institutional Integration
+          </div>
+          <h3 className="text-xl font-display font-extrabold text-[#3D4852]">
+            Direct NDMA / BRO Alignment
+          </h3>
+          <p className="text-sm text-[#6B7280] leading-relaxed">
+            Built around the operational needs of state disaster management authorities, border road engineers, and first responder battalions, providing deterministic early warnings with zero ambiguous noise.
           </p>
-        </GridItem>
-      </Grid>
-    </Section>
+        </div>
+      </div>
+    </section>
   );
 }

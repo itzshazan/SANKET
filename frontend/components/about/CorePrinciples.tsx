@@ -1,69 +1,71 @@
 "use client";
 
-import { Section } from "../ui/Section";
+import React from "react";
 import { Database, Eye, MapPin, Radio } from "lucide-react";
 
 export function CorePrinciples() {
   const principles = [
     {
       icon: Database,
-      title: "Multi-Signal Ingestion",
-      description: "We correlate multispectral satellite indices (NDVI), slope DEMs, and volumetric moisture to eliminate dangerous blindspots."
+      title: "Multi-Signal Fusion",
+      description: "We correlate Sentinel-2 radar displacement, slope DEMs, and volumetric moisture to eliminate blindspots."
     },
     {
       icon: Eye,
-      title: "Computer Vision Ground-Truth",
-      description: "Visual crack and debris segmentation validates remote sensing inferences directly against photographic field evidence."
+      title: "Computer Vision Verification",
+      description: "Visual tension crack and scarp segmentation validates remote sensing inferences against field photographic evidence."
     },
     {
       icon: MapPin,
-      title: "Micro-Zone Spatial Resolution",
-      description: "Actionable risk probabilities mapped to exact 10m x 10m coordinates and highway chainages rather than vague regional text."
+      title: "10m Micro-Zone Precision",
+      description: "Actionable failure probabilities mapped to exact 10m coordinates and highway milestones rather than broad regional bulletins."
     },
     {
       icon: Radio,
-      title: "Deterministic Multi-Channel Warnings",
-      description: "Tiered hazard alerts dispatched across SMS, web push, and automated voice systems to ensure zero delayed evacuations."
+      title: "CAP Protocol Warnings",
+      description: "Tiered hazard alerts dispatched across SMS, web push, and automated siren webhooks to ensure zero delayed evacuations."
     }
   ];
 
   return (
-    <Section className="py-16 sm:py-24 bg-[#F8F9F6] border-b border-[#E3E8DF]">
-      <div className="max-w-4xl mb-12 sm:mb-16 space-y-4">
-        <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#213318]">
-          Our Pillars
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-[#1A2614]">
-          Engineering Rigor for Life-Critical Early Warning
-        </h2>
-        <p className="text-base sm:text-lg text-[#586650] leading-relaxed">
-          Disaster risk prediction requires deterministic data verification, high-reliability infrastructure, and seamless multi-agency interoperability.
-        </p>
-      </div>
+    <section className="py-20 sm:py-28 bg-[#E0E5EC] text-[#3D4852]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF]">
+            Architectural Pillars
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold tracking-tight text-[#3D4852]">
+            Engineering Rigor for Life-Critical Early Warning
+          </h2>
+          <p className="text-base sm:text-lg text-[#6B7280] leading-relaxed">
+            Geohazard prediction requires deterministic physics modeling, high-reliability infrastructure, and seamless multi-agency interoperability.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-        {principles.map((p, idx) => {
-          const IconComponent = p.icon;
-          return (
-            <div
-              key={idx}
-              className="p-6 rounded-2xl bg-white border border-[#E3E8DF] shadow-xs hover:border-[#C8EA3B] transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-[#213318] text-[#C8EA3B] flex items-center justify-center mb-4">
-                  <IconComponent className="w-5 h-5" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {principles.map((p, idx) => {
+            const IconComponent = p.icon;
+            return (
+              <div
+                key={idx}
+                className="p-8 rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] hover:shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.7)] hover:translate-y-[-2px] transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] mb-5">
+                    <IconComponent className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-display font-extrabold text-[#3D4852] mb-3">
+                    {p.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
+                    {p.description}
+                  </p>
                 </div>
-                <h3 className="text-base font-display font-bold text-[#1A2614] mb-2">
-                  {p.title}
-                </h3>
-                <p className="text-xs text-[#586650] leading-relaxed">
-                  {p.description}
-                </p>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, ArrowRight, ExternalLink, Activity } from "lucide-react";
+import { ArrowRight, ExternalLink, ShieldCheck, Activity } from "lucide-react";
 
 function GithubIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
@@ -22,112 +22,157 @@ function WhatsAppIcon({ className = "w-4 h-4" }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="w-full bg-[#1E2D17] border-t border-[#37502B] text-[#C5D7BD] pt-16 sm:pt-20 pb-0 mt-auto">
+    <footer className="w-full bg-[#E0E5EC] text-[#3D4852] pt-16 sm:pt-24 pb-12 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main 4-Column Grid + Brand Summary */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14">
-          {/* Brand Column (Span 4) */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="flex items-center gap-2.5">
-              <span className="w-9 h-9 rounded-lg bg-[#C8EA3B] text-[#1A2614] flex items-center justify-center font-display font-black text-lg shadow-[0_0_20px_rgba(200,234,59,0.3)]">
-                S
-              </span>
-              <span className="text-2xl font-display font-extrabold tracking-tight text-white">
-                SANKET
-              </span>
+        {/* Main Molded Card Container */}
+        <div className="rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-8 sm:p-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+            {/* Brand Column (Span 4) */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-[#E0E5EC] shadow-[4px_4px_8px_rgba(163,177,198,0.7),-4px_-4px_8px_rgba(255,255,255,0.8)] flex items-center justify-center">
+                  <span className="w-6 h-6 rounded-xl bg-[#6C63FF] text-white flex items-center justify-center font-display font-extrabold text-xs">
+                    S
+                  </span>
+                </div>
+                <span className="text-2xl font-display font-extrabold tracking-tight text-[#3D4852]">
+                  SANKET
+                </span>
+              </div>
+
+              <div className="inline-block px-3 py-1 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF]">
+                AI-Powered Landslide Early Warning
+              </div>
+
+              <p className="text-sm text-[#6B7280] leading-relaxed max-w-sm">
+                Uniting satellite remote sensing, IoT subsurface moisture feeds, and computer vision to predict slope failures hours before mass movement.
+              </p>
+
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href="https://github.com/itzshazan/SANKET"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-2xl bg-[#E0E5EC] shadow-[5px_5px_10px_rgba(163,177,198,0.6),-5px_-5px_10px_rgba(255,255,255,0.5)] hover:shadow-[7px_7px_14px_rgba(163,177,198,0.7),-7px_-7px_14px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#3D4852] hover:text-[#6C63FF] transition-all duration-300"
+                  aria-label="GitHub Repository"
+                >
+                  <GithubIcon className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://wa.me/918434778107?text=Hello%2C%20I%20would%20like%20to%20learn%20more%20about%20SANKET"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-2xl bg-[#E0E5EC] shadow-[5px_5px_10px_rgba(163,177,198,0.6),-5px_-5px_10px_rgba(255,255,255,0.5)] hover:shadow-[7px_7px_14px_rgba(163,177,198,0.7),-7px_-7px_14px_rgba(255,255,255,0.6)] active:shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#3D4852] hover:text-[#38B2AC] transition-all duration-300"
+                  aria-label="WhatsApp Support"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                </a>
+              </div>
             </div>
-            <p className="text-xs font-mono tracking-widest text-[#C8EA3B] uppercase">
-              Predict · Prepare · Protect
-            </p>
-            <p className="text-sm text-[#C5D7BD]/80 leading-relaxed max-w-sm">
-              An AI-powered landslide early warning and risk intelligence platform that unites satellite remote sensing, IoT environmental feeds, and computer vision to safeguard lives and infrastructure.
-            </p>
 
-            <div className="pt-2">
-              <a
-                href="#section-15"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#C8EA3B] text-[#1A2614] font-display font-semibold text-xs uppercase tracking-wider hover:bg-[#E4F76E] shadow-sm hover:shadow-[0_0_20px_rgba(200,234,59,0.3)] transition-all cursor-pointer"
-              >
-                Request a Demo <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+            {/* Column 1: Platform (Span 3) */}
+            <div className="lg:col-span-3">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#3D4852] mb-4">
+                Platform Modules
+              </h3>
+              <ul className="space-y-2.5 text-sm">
+                <li>
+                  <Link href="/#section-01" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    Live Kedarnath Risk Map
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#section-05" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    Pore Pressure Simulator
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#section-09" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    Computer Vision Scarp Detector
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#section-10" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    Common Alerting Protocol (CAP)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#section-11" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    Field Intelligence App
+                  </Link>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          {/* Column 1: Platform (Span 2) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
-              Platform
-            </h3>
-            <ul className="space-y-2.5 text-xs text-[#7E9473]">
-              <li><a href="#section-08" className="hover:text-[#C5D7BD] transition-colors">AI Risk Assessment</a></li>
-              <li><a href="#section-08" className="hover:text-[#C5D7BD] transition-colors">Satellite Monitoring</a></li>
-              <li><a href="#section-09" className="hover:text-[#C5D7BD] transition-colors">Computer Vision</a></li>
-              <li><a href="#section-01" className="hover:text-[#C5D7BD] transition-colors">GIS Risk Maps</a></li>
-              <li><a href="#section-07" className="hover:text-[#C5D7BD] transition-colors">Data Sources</a></li>
-            </ul>
-          </div>
+            {/* Column 2: Navigation & Quick Links (Span 2) */}
+            <div className="lg:col-span-2">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#3D4852] mb-4">
+                Explore
+              </h3>
+              <ul className="space-y-2.5 text-sm">
+                <li>
+                  <Link href="/about" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    About Project
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#section-07" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    How It Works
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#section-06" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    System Comparison
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/faqs" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    FAQs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-[#6B7280] hover:text-[#6C63FF] transition-colors">
+                    Agency Sandbox Access
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Column 2: Solutions (Span 2) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
-              Solutions
-            </h3>
-            <ul className="space-y-2.5 text-xs text-[#7E9473]">
-              <li><a href="#section-10" className="hover:text-[#C5D7BD] transition-colors">Early Warning Alerts</a></li>
-              <li><a href="#section-01" className="hover:text-[#C5D7BD] transition-colors">Risk Dashboard</a></li>
-              <li><a href="#section-11" className="hover:text-[#C5D7BD] transition-colors">Field Reporting</a></li>
-              <li><a href="#section-10" className="hover:text-[#C5D7BD] transition-colors">Alert Channels</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Who It's For (Span 2) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
-              Who It&apos;s For
-            </h3>
-            <ul className="space-y-2.5 text-xs text-[#7E9473]">
-              <li><a href="#section-12" className="hover:text-[#C5D7BD] transition-colors">Disaster Authorities</a></li>
-              <li><a href="#section-12" className="hover:text-[#C5D7BD] transition-colors">Road Agencies</a></li>
-              <li><a href="#section-12" className="hover:text-[#C5D7BD] transition-colors">Emergency Teams</a></li>
-              <li><a href="#section-12" className="hover:text-[#C5D7BD] transition-colors">Field Teams</a></li>
-              <li><a href="#section-12" className="hover:text-[#C5D7BD] transition-colors">Communities</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Project (Span 2) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-white mb-4">
-              Project
-            </h3>
-            <ul className="space-y-2.5 text-xs text-[#7E9473]">
-              <li><a href="#section-13" className="hover:text-[#C5D7BD] transition-colors">About SANKET</a></li>
-              <li><a href="#section-04" className="hover:text-[#C5D7BD] transition-colors flex items-center gap-1">SIH Hackathon <span className="text-[10px] text-[#C8EA3B]">★</span></a></li>
-              <li><a href="https://wa.me/919045597305" target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors flex items-center gap-1"><WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" /> WhatsApp: +91 90455 97305</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#C5D7BD] transition-colors flex items-center gap-1">GitHub <ExternalLink className="w-3 h-3" /></a></li>
-              <li><a href="#section-07" className="hover:text-[#C5D7BD] transition-colors">Documentation</a></li>
-            </ul>
+            {/* Column 3: Sandbox Request CTA Card (Span 3) */}
+            <div className="lg:col-span-3">
+              <div className="p-6 rounded-[24px] bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] space-y-3">
+                <h4 className="text-xs font-mono font-bold uppercase text-[#6C63FF]">
+                  Agency Deployment
+                </h4>
+                <p className="text-xs text-[#6B7280] leading-relaxed">
+                  Connect state DEM raster layers and test alert protocols in your designated mountain sector.
+                </p>
+                <Link
+                  href="/contact"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#6C63FF] text-white font-display font-bold text-xs uppercase tracking-wider hover:bg-[#7B73FF] shadow-[4px_4px_8px_rgba(163,177,198,0.6),-4px_-4px_8px_rgba(255,255,255,0.6)] active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.3)] transition-all duration-300"
+                >
+                  Request Sandbox <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar in Deepest Forest Dark (#1A2614) */}
-      <div className="w-full bg-[#1A2614] border-t border-[#37502B] py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7E9473]">
-          <div className="flex items-center gap-2 font-mono">
-            <span>© 2025 SANKET</span>
-            <span>·</span>
-            <span className="text-[#C5D7BD]">Built for Smart India Hackathon</span>
+        {/* Bottom Bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans text-[#6B7280] px-4">
+          <div>
+            © {new Date().getFullYear()} SANKET · Smart India Hackathon. All rights reserved.
           </div>
-
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-[#C5D7BD] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-[#C5D7BD] transition-colors">Terms of Service</Link>
-            <a href="https://wa.me/919045597305" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:opacity-80 transition-opacity" aria-label="WhatsApp" title="Chat on WhatsApp (+91 90455 97305)">
-              <WhatsAppIcon className="w-4 h-4" />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub Repository">
-              <GithubIcon className="w-4 h-4" />
-            </a>
+          <div className="flex items-center gap-6 font-mono text-[11px]">
+            <Link href="/privacy" className="hover:text-[#6C63FF] transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-[#6C63FF] transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/contact" className="hover:text-[#6C63FF] transition-colors">
+              Support
+            </Link>
           </div>
         </div>
       </div>

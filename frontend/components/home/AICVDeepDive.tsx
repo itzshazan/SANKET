@@ -2,216 +2,167 @@
 
 import React, { useState } from "react";
 import { Camera, Satellite, ArrowDown, CheckCircle2, SlidersHorizontal, Eye, ShieldAlert, Sparkles, Activity } from "lucide-react";
-import { SectionHeader } from "../ui/Section";
-import { ScrollReveal, SlideReveal, ScaleReveal } from "../shared/ScrollReveal";
 
 export function AICVDeepDive() {
   const [showMask, setShowMask] = useState(true);
 
   return (
-    <section id="section-09" className="w-full bg-[#FFFFFF] border-b border-[#E3E8DF] py-20 md:py-28">
+    <section id="section-09" className="w-full bg-[#E0E5EC] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <SectionHeader
-            pill="Visual Intelligence"
-            title="AI Sees What Humans Might Miss."
-            subtitle="SANKET uses computer vision to analyze imagery for visual indicators that strengthen risk assessment and situational awareness."
-            statusText="YOLOv8 INFERENCE 84ms"
-            className="text-center mx-auto"
-          />
-        </ScrollReveal>
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
+            Visual Intelligence & Edge Inference
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
+            Computer Vision Surface Deformation Engine
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+            SANKET uses deep segmentation models to detect micro-cracks and scarp displacement before massive slope collapse.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {/* Left Panel: Ground Image Analysis Flow */}
-          <SlideReveal direction="left" className="rounded-2xl md:rounded-3xl bg-[#F8F9F6] border border-[#E3E8DF] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover-card-light">
+          <div className="rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-6 sm:p-10 flex flex-col justify-between">
             <div>
               {/* Panel Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#E3E8DF] mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#213318] text-[#C8EA3B] flex items-center justify-center">
-                    <Camera className="w-4 h-4" />
+              <div className="flex items-center justify-between pb-4 border-b border-[#A3B1C6]/30 mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
+                    <Camera className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display font-bold text-[#1A2614]">
-                      Ground Image Analysis Flow
+                    <h3 className="text-base font-display font-extrabold text-[#3D4852]">
+                      Ground Image Analysis Pipeline
                     </h3>
-                    <span className="text-[11px] font-mono text-[#586650]">
+                    <span className="text-xs font-mono text-[#6B7280]">
                       Mobile Photo / Road Camera Feed
                     </span>
                   </div>
                 </div>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#C8EA3B]/20 text-[#1A2614] text-[10px] font-mono font-bold">
-                  YOLOv8 & ResNet
+                <span className="px-3 py-1 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-[#6C63FF] text-[10px] font-mono font-bold">
+                  YOLOv8 & UNet
                 </span>
               </div>
 
-              {/* Vertical Step Flow */}
-              <div className="space-y-2.5">
-                <div className="p-3 rounded-xl bg-white border border-[#E3E8DF] flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#1A2614] font-semibold">1. Ground / Roadside Photo Ingested</span>
-                  <span className="text-[#7E9473]">Input 4K JPG</span>
+              {/* Vertical Step Flow with Neumorphic Inset Pods */}
+              <div className="space-y-3">
+                <div className="p-3.5 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#3D4852] font-bold">1. High-Res Image Ingestion</span>
+                  <span className="text-[#6B7280]">4K Telephoto / Drone</span>
                 </div>
-                <div className="flex justify-center text-[#C8EA3B]">
-                  <ArrowDown className="w-4 h-4 text-[#213318]" />
-                </div>
-
-                <div className="p-3 rounded-xl bg-white border border-[#E3E8DF] flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#1A2614] font-semibold">2. SANKET Computer Vision Inference</span>
-                  <span className="text-[#213318] font-bold">84ms GPU Latency</span>
-                </div>
-                <div className="flex justify-center text-[#C8EA3B]">
-                  <ArrowDown className="w-4 h-4 text-[#213318]" />
+                <div className="flex justify-center text-[#6C63FF]">
+                  <ArrowDown className="w-4 h-4" />
                 </div>
 
-                <div className="p-3 rounded-xl bg-white border border-[#E3E8DF] flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#1A2614] font-semibold">3. Anomaly Bounding Box Classification</span>
-                  <span className="text-[#E03030] font-bold">96.8% Conf.</span>
+                <div className="p-3.5 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-between text-xs font-mono">
+                  <span className="text-[#3D4852] font-bold">2. Edge CV Inference</span>
+                  <span className="text-[#6C63FF] font-bold">84ms GPU Latency</span>
                 </div>
-              </div>
+                <div className="flex justify-center text-[#6C63FF]">
+                  <ArrowDown className="w-4 h-4" />
+                </div>
 
-              {/* Detection Output Chips */}
-              <div className="mt-6 pt-5 border-t border-[#E3E8DF]">
-                <span className="text-xs font-mono font-bold text-[#586650] uppercase tracking-wider block mb-3">
-                  Live Detected Geological Features:
-                </span>
-                <div className="grid grid-cols-2 gap-2.5">
-                  <div className="p-2.5 rounded-xl bg-red-500/10 border border-red-500/25 flex items-center gap-2 text-xs font-mono font-bold text-[#E03030]">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#E03030] animate-pulse" />
-                    Crack Detected (18cm)
+                <div className="p-4 rounded-2xl bg-[#E0E5EC] shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] space-y-2">
+                  <div className="text-xs font-mono font-bold text-[#3D4852]">
+                    3. Geohazard Segmentations Flagged:
                   </div>
-                  <div className="p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/25 flex items-center gap-2 text-xs font-mono font-bold text-[#F07B20]">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#F07B20]" />
-                    Debris Detected (3.2m³)
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-red-500/10 border border-red-500/25 flex items-center gap-2 text-xs font-mono font-bold text-[#E03030]">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#E03030] animate-pulse" />
-                    Landslide Area Flagged
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/25 flex items-center gap-2 text-xs font-mono font-bold text-[#F07B20]">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#F07B20]" />
-                    Road Blockage Impending
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div className="flex items-center gap-2 text-[#3D4852]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#38B2AC]" />
+                      <span>Tension Cracks (92%)</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#3D4852]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#38B2AC]" />
+                      <span>Road Subsidence (88%)</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#3D4852]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#38B2AC]" />
+                      <span>Toe Bulging (95%)</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#3D4852]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#38B2AC]" />
+                      <span>Loose Talus Flow (84%)</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </SlideReveal>
 
-          {/* Right Panel: Satellite Image Analysis with Before / After Toggle */}
-          <SlideReveal direction="right" className="rounded-2xl md:rounded-3xl bg-[#F8F9F6] border border-[#E3E8DF] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover-card-light">
+            <div className="pt-6 mt-6 border-t border-[#A3B1C6]/30 flex items-center justify-between text-xs text-[#6B7280]">
+              <span>Inference: Mobile GPU Edge & Cloud</span>
+              <span className="font-mono font-bold text-[#38B2AC]">Confidence: 94.8%</span>
+            </div>
+          </div>
+
+          {/* Right Panel: Interactive Scarp Segmentation Switcher */}
+          <div className="rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-6 sm:p-10 flex flex-col justify-between">
             <div>
-              {/* Panel Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#E3E8DF] mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#213318] text-[#C8EA3B] flex items-center justify-center">
-                    <Satellite className="w-4 h-4" />
+              {/* Header with Mask Toggle Switch */}
+              <div className="flex items-center justify-between pb-4 border-b border-[#A3B1C6]/30 mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF]">
+                    <Satellite className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-base font-display font-bold text-[#1A2614]">
-                      Satellite Image Segmentation
+                    <h3 className="text-base font-display font-extrabold text-[#3D4852]">
+                      Satellite Scarp Mask Switcher
                     </h3>
-                    <span className="text-[11px] font-mono text-[#586650]">
-                      Sentinel-2 10m Optical & Radar InSAR
+                    <span className="text-xs font-mono text-[#6B7280]">
+                      Sentinel-2 Kedarnath Scarp Area
                     </span>
                   </div>
                 </div>
 
-                {/* Before / After Toggle Button */}
-                <div className="flex items-center bg-[#213318] p-1 rounded-lg border border-[#37502B]">
-                  <button
-                    onClick={() => setShowMask(false)}
-                    className={`px-2.5 py-1 rounded text-xs font-mono transition-colors cursor-pointer ${
-                      !showMask ? "bg-[#C8EA3B] text-[#1A2614] font-bold shadow-xs" : "text-[#C5D7BD] hover:text-white"
-                    }`}
-                  >
-                    Raw Feed
-                  </button>
-                  <button
-                    onClick={() => setShowMask(true)}
-                    className={`px-2.5 py-1 rounded text-xs font-mono transition-colors cursor-pointer ${
-                      showMask ? "bg-[#C8EA3B] text-[#1A2614] font-bold shadow-xs" : "text-[#C5D7BD] hover:text-white"
-                    }`}
-                  >
-                    AI Mask Overlay
-                  </button>
-                </div>
+                <button
+                  onClick={() => setShowMask(!showMask)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold transition-all duration-300 cursor-pointer ${
+                    showMask
+                      ? "bg-[#6C63FF] text-white shadow-[3px_3px_6px_rgba(108,99,255,0.4)]"
+                      : "bg-[#E0E5EC] text-[#3D4852] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)]"
+                  }`}
+                >
+                  {showMask ? "AI MASK: ON" : "AI MASK: OFF"}
+                </button>
               </div>
 
-              {/* Satellite Interactive Frame */}
-              <div className="w-full aspect-[16/10] rounded-2xl bg-[#1A2614] border border-[#37502B] relative overflow-hidden flex items-center justify-center p-4">
-                {/* Active Computer Vision Scanning Beam */}
-                <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C8EA3B] to-transparent shadow-[0_0_15px_#C8EA3B] animate-cv-scan z-20 pointer-events-none" />
-
-                {/* SVG Visual representation of Satellite Terrain & Segmentation Mask */}
-                <svg className="w-full h-full" viewBox="0 0 400 240" preserveAspectRatio="none">
-                  {/* Base Terrain Contour Mesh */}
-                  <defs>
-                    <linearGradient id="sat-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#1E2D17" />
-                      <stop offset="50%" stopColor="#273C1E" />
-                      <stop offset="100%" stopColor="#1A2614" />
-                    </linearGradient>
-                    <pattern id="sat-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(55,80,43,0.3)" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-                  <rect width="400" height="240" fill="url(#sat-grad)" />
-                  <rect width="400" height="240" fill="url(#sat-grid)" />
-
-                  {/* Mountain Ridge Paths */}
-                  <path d="M 0 160 Q 90 90 200 140 T 400 110" fill="none" stroke="#37502B" strokeWidth="2" />
-                  <path d="M 0 200 Q 120 130 250 180 T 400 160" fill="none" stroke="#37502B" strokeWidth="1.5" />
-                  <path d="M 0 90 Q 150 40 300 80 T 400 60" fill="none" stroke="#37502B" strokeWidth="1" />
-
-                  {/* AI Segmentation Mask when toggled on */}
-                  {showMask && (
-                    <g className="animate-in fade-in duration-300">
-                      {/* Critical Red Scarp Area */}
-                      <path
-                        d="M 160 90 Q 230 70 270 120 T 230 160 T 150 130 Z"
-                        fill="rgba(224, 48, 48, 0.45)"
-                        stroke="#E03030"
-                        strokeWidth="2"
-                        strokeDasharray="4 2"
-                      />
-                      {/* Orange Debris Runout Zone */}
-                      <path
-                        d="M 230 140 Q 280 160 320 200 T 260 220 T 200 180 Z"
-                        fill="rgba(240, 123, 32, 0.35)"
-                        stroke="#F07B20"
-                        strokeWidth="1.5"
-                      />
-                      {/* AI Bounding Box Tag */}
-                      <rect x="150" y="60" width="130" height="22" rx="4" fill="#213318" stroke="#C8EA3B" strokeWidth="1" />
-                      <text x="156" y="75" fill="#C8EA3B" fontSize="10" fontFamily="monospace" fontWeight="bold">
-                        LANDSLIDE SCARP (98%)
-                      </text>
-                    </g>
-                  )}
-                </svg>
-
-                {/* State Pill on image */}
-                <div className="absolute bottom-3 left-3 bg-[#1A2614]/90 backdrop-blur-md px-2.5 py-1 rounded border border-[#37502B] text-[10px] font-mono text-[#C5D7BD] z-30">
-                  {showMask ? "● SEGMENTATION ACTIVE (2 ZONES)" : "○ RAW MULTISPECTRAL FEED"}
+              {/* Sunken Visual Preview Viewport */}
+              <div className="relative h-60 w-full rounded-2xl bg-[#E0E5EC] shadow-[inset_6px_6px_12px_rgba(163,177,198,0.7),inset_-6px_-6px_12px_rgba(255,255,255,0.6)] overflow-hidden flex items-center justify-center p-4">
+                {/* Visual Topographic Texture */}
+                <div className="absolute inset-0 opacity-40 flex items-center justify-center">
+                  <svg className="w-full h-full" viewBox="0 0 400 200">
+                    <path d="M 10 160 Q 120 40 240 120 T 390 80" fill="none" stroke="#6C63FF" strokeWidth="2" />
+                    <path d="M 10 180 Q 150 90 290 170 T 390 130" fill="none" stroke="#A3B1C6" strokeWidth="1.5" />
+                  </svg>
                 </div>
-              </div>
 
-              <div className="mt-4 text-xs font-mono text-[#586650] flex justify-between">
-                <span>Model: UNet++ with ResNet-50 Backbone</span>
-                <span className="text-[#1A2614] font-bold">F1 Score: 0.912</span>
+                {/* AI Mask Overlay */}
+                {showMask ? (
+                  <div className="relative z-10 p-5 rounded-2xl bg-[#E0E5EC]/90 shadow-[6px_6px_12px_rgba(163,177,198,0.6),-6px_-6px_12px_rgba(255,255,255,0.7)] text-center space-y-2 backdrop-blur-sm max-w-xs">
+                    <div className="inline-block px-2.5 py-0.5 rounded-md bg-[#E53E3E] text-white text-[10px] font-mono font-bold">
+                      ACTIVE SCARP ANOMALY
+                    </div>
+                    <div className="text-xs font-mono font-bold text-[#3D4852]">
+                      Predicted Debris Zone: 14,200 m²
+                    </div>
+                    <div className="text-[11px] text-[#6B7280]">
+                      InSAR Vector: -18.4 mm/week downslope
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative z-10 text-xs font-mono text-[#6B7280] bg-[#E0E5EC] px-4 py-2 rounded-xl shadow-[3px_3px_6px_rgba(163,177,198,0.5)]">
+                    Raw 10m Optical Satellite Composite
+                  </div>
+                )}
               </div>
             </div>
-          </SlideReveal>
-        </div>
 
-        {/* Centered Pull Quote with 3px Lime Left Border */}
-        <ScaleReveal delay={0.15} className="max-w-3xl mx-auto mt-14 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-[#F8F9F6] border-l-[3px] border-l-[#C8EA3B] border-y border-r border-[#E3E8DF] shadow-xs text-center sm:text-left hover-card-light">
-          <blockquote className="text-xl sm:text-2xl font-display font-medium italic text-[#1A2614] leading-snug">
-            &ldquo;Environmental data tells us what is changing. Visual intelligence shows us where.&rdquo;
-          </blockquote>
-          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#7E9473] mt-3">
-            SANKET Computer Vision & Earth Observation Architecture
+            <div className="pt-6 mt-6 border-t border-[#A3B1C6]/30 flex items-center justify-between text-xs font-mono text-[#6B7280]">
+              <span>Overlay: ESA Sentinel-2 InSAR</span>
+              <span className="text-[#6C63FF] font-bold">Precision: 10m Grid</span>
+            </div>
           </div>
-        </ScaleReveal>
+        </div>
       </div>
     </section>
   );

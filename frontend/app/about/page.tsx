@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white flex flex-col selection:bg-[#C8EA3B] selection:text-[#1A2614]">
+    <div className="min-h-screen bg-[#E0E5EC] flex flex-col selection:bg-[#6C63FF] selection:text-white">
       <AboutHero />
       <CorePrinciples />
       <div className="mt-auto">

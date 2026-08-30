@@ -37,9 +37,12 @@ export const metadata: Metadata = {
     "NDMA Aligned",
   ],
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
     shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    apple: "/apple-icon.svg",
   },
   alternates: {
     canonical: "/",
@@ -93,7 +96,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-full flex flex-col font-sans text-[#1A2614] bg-[#FFFFFF] selection:bg-[#C8EA3B] selection:text-[#1A2614]" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans text-[#3D4852] bg-[#E0E5EC] selection:bg-[#6C63FF] selection:text-white" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

@@ -9,112 +9,96 @@ import {
   Home,
   Globe,
   Landmark,
-  Compass,
-  AlertTriangle
+  Compass
 } from "lucide-react";
-import { SectionHeader } from "../ui/Section";
-import { StaggerContainer, StaggerItem, ScrollReveal } from "../shared/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "../shared/ScrollReveal";
 
 const BENEFICIARIES = [
   {
     num: "01",
-    role: "Disaster Management Authorities",
+    role: "Disaster Authorities (NDMA/SDMA)",
     icon: Landmark,
-    iconBg: "#DDF2EC", // Mint
     description:
-      "Monitor multiple vulnerable zones simultaneously across state command centers, understand changing risk trajectories, and prioritize where to allocate resources.",
+      "Monitor hundreds of vulnerable slope sectors simultaneously across state command centers, prioritizing resource deployment before disaster strikes.",
   },
   {
     num: "02",
-    role: "Infrastructure & Road Agencies",
+    role: "Border Roads Organisation (BRO)",
     icon: Car,
-    iconBg: "#ECEBFA", // Lavender
     description:
-      "Identify arterial mountain highways, railway corridors, and bridges at elevated risk before catastrophic rockfalls or debris flow blockages occur.",
+      "Identify high-altitude arterial highways, bridges, and tunnels at elevated risk before debris flows block critical supply lines.",
   },
   {
     num: "03",
-    role: "Emergency Response Teams",
+    role: "Emergency Response (NDRF)",
     icon: Flame,
-    iconBg: "rgba(200,234,59,0.20)", // Lime
     description:
-      "Access predictive lookaheads to preposition rescue battalions, organize rapid evacuation corridors, and coordinate targeted response maneuvers.",
+      "Access 12 to 24-hour predictive lookaheads to preposition rescue battalions and plan safe evacuation corridors.",
   },
   {
     num: "04",
-    role: "Geological & Field Teams",
+    role: "Field Geological Teams",
     icon: Compass,
-    iconBg: "#DDF2EC", // Mint
     description:
-      "Submit geo-tagged ground observations, crack photographs, and sensor readings directly from rugged field terrain into the central platform without friction.",
+      "Submit geo-tagged ground photos, crack measurements, and piezometer readings from rugged mountain terrain with offline sync.",
   },
   {
     num: "05",
-    role: "Local Mountain Communities",
+    role: "Himalayan Communities",
     icon: Home,
-    iconBg: "#ECEBFA", // Lavender
     description:
-      "Receive transparent, localized early warning broadcasts in native languages when physical hazard indicators in their immediate village reach critical thresholds.",
+      "Receive transparent, multilingual SMS early warning broadcasts when physical slope indicators in their village reach critical levels.",
   },
   {
     num: "06",
-    role: "Any Region Facing Landslide Risk",
-    icon: Globe,
-    iconBg: "rgba(200,234,59,0.20)", // Lime
+    role: "District Administration & Police",
+    icon: Building2,
     description:
-      "SANKET is engineered for rapid modular deployment across any geologically susceptible territory worldwide with standard remote sensing and DEM coverage.",
+      "Coordinate targeted traffic stoppages, temporary checkpoint diversions, and public safety announcements with verified spatial data.",
   },
 ];
 
 export function WhoBenefits() {
   return (
-    <section id="section-12" className="w-full bg-[#F8F9F6] border-b border-[#E3E8DF] py-20 md:py-28">
+    <section id="section-12" className="w-full bg-[#E0E5EC] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal>
-          <SectionHeader
-            pill="Stakeholder Ecosystem"
-            title="Built for Those Who Need to Act Early."
-            subtitle="Designed for multi-agency interoperability — connecting high-level policy command with on-the-ground first responders."
-            className="text-center mx-auto"
-          />
-        </ScrollReveal>
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6),inset_-2px_-2px_4px_rgba(255,255,255,0.5)] text-xs font-mono font-bold text-[#6C63FF] mb-4">
+            Stakeholder Ecosystem
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3D4852] tracking-tight">
+            Who Benefits From SANKET
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-[#6B7280]">
+            Engineered to bridge central disaster planning and on-the-ground mountain protection.
+          </p>
+        </div>
 
-        <StaggerContainer staggerDelay={0.08} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BENEFICIARIES.map((item) => {
-            const IconComponent = item.icon;
+            const Icon = item.icon;
             return (
               <StaggerItem
-                key={item.role}
-                className="p-8 rounded-3xl bg-white border border-[#E3E8DF] hover:border-[#C8EA3B] hover-card-light flex flex-col justify-between group cursor-default"
+                key={item.num}
+                className="rounded-[32px] bg-[#E0E5EC] shadow-[9px_9px_16px_rgba(163,177,198,0.6),-9px_-9px_16px_rgba(255,255,255,0.5)] p-8 sm:p-9 flex flex-col justify-between hover:shadow-[12px_12px_24px_rgba(163,177,198,0.7),-12px_-12px_24px_rgba(255,255,255,0.7)] hover:translate-y-[-2px] transition-all duration-300 group cursor-default"
               >
                 <div>
-                  {/* Icon & Number Badge */}
                   <div className="flex items-center justify-between mb-6">
-                    <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center text-[#213318] group-hover:scale-110 transition-transform shadow-xs"
-                      style={{ backgroundColor: item.iconBg }}
-                    >
-                      <IconComponent className="w-6 h-6 text-[#213318]" />
+                    <div className="w-14 h-14 rounded-2xl bg-[#E0E5EC] shadow-[inset_4px_4px_8px_rgba(163,177,198,0.6),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] flex items-center justify-center text-[#6C63FF] group-hover:scale-105 transition-transform duration-300">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-[#586650]/60">
-                      #{item.num}
+                    <span className="px-3 py-1 rounded-xl bg-[#E0E5EC] shadow-[inset_2px_2px_4px_rgba(163,177,198,0.6)] text-xs font-mono font-bold text-[#6B7280]">
+                      {item.num}
                     </span>
                   </div>
 
-                  {/* Role Title */}
-                  <h3 className="text-lg sm:text-xl font-display font-bold text-[#1A2614] mb-3 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-display font-extrabold text-[#3D4852] mb-3">
                     {item.role}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-sm text-[#586650] leading-relaxed">
+                  <p className="text-sm text-[#6B7280] leading-relaxed">
                     {item.description}
                   </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-[#E3E8DF]/60 flex items-center justify-between text-xs font-mono text-[#7E9473]">
-                  <span>Dedicated Stakeholder View</span>
-                  <span className="text-[#1A2614] font-bold">&rarr;</span>
                 </div>
               </StaggerItem>
             );

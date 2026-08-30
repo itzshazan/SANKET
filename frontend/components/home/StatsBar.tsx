@@ -11,22 +11,22 @@ interface StatItem {
 const STATS: StatItem[] = [
   {
     value: "4",
-    label: "Risk Levels",
+    label: "Physical Risk Tiers",
     renderCount: (p) => `${Math.round(p * 4)}`,
   },
   {
     value: "6+",
-    label: "Data Sources",
+    label: "Fused Ingestion Feeds",
     renderCount: (p) => `${Math.round(p * 6)}+`,
   },
   {
     value: "24/7",
-    label: "Continuous Monitoring",
+    label: "Continuous Telemetry",
     renderCount: (p) => `${Math.round(p * 24)}/7`,
   },
   {
     value: "5",
-    label: "Alert Channels",
+    label: "CAP Alert Channels",
     renderCount: (p) => `${Math.round(p * 5)}`,
   },
   {
@@ -84,20 +84,20 @@ function StatCounter({ stat }: { stat: StatItem }) {
 
 export function StatsBar() {
   return (
-    <section id="section-02" className="w-full bg-[#1A2614] border-b border-[#37502B] py-8 sm:py-10">
+    <section id="section-02" className="w-full bg-[#E0E5EC] py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-4 divide-y md:divide-y-0 md:divide-x divide-[#37502B]">
-          {STATS.map((stat, idx) => (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 sm:gap-6">
+          {STATS.map((stat) => (
             <div
               key={stat.label}
-              className={`flex flex-col items-center justify-center text-center px-4 ${
-                idx > 0 && idx % 2 === 0 ? "pt-6 md:pt-0" : ""
-              }`}
+              className="p-6 rounded-[28px] bg-[#E0E5EC] shadow-[8px_8px_16px_rgba(163,177,198,0.6),-8px_-8px_16px_rgba(255,255,255,0.7)] flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-[10px_10px_20px_rgba(163,177,198,0.7),-10px_-10px_20px_rgba(255,255,255,0.8)]"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#C8EA3B] tracking-tight">
-                <StatCounter stat={stat} />
+              <div className="w-full py-3 mb-2 rounded-2xl bg-[#E0E5EC] shadow-[inset_3px_3px_6px_rgba(163,177,198,0.6),inset_-3px_-3px_6px_rgba(255,255,255,0.5)]">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#6C63FF] tracking-tight">
+                  <StatCounter stat={stat} />
+                </span>
               </div>
-              <div className="text-xs sm:text-sm font-sans font-medium text-[#C5D7BD] mt-2">
+              <div className="text-xs sm:text-sm font-sans font-medium text-[#6B7280]">
                 {stat.label}
               </div>
             </div>

@@ -38,7 +38,7 @@ const homepageSchema = {
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen bg-[#FFFFFF] flex flex-col selection:bg-[#C8EA3B] selection:text-[#1A2614]">
+      <div className="min-h-screen bg-[#E0E5EC] flex flex-col selection:bg-[#6C63FF] selection:text-white">
         {/* Section 01 · HERO (#213318) */}
         <Hero />
 
